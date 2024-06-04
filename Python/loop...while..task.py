@@ -147,18 +147,20 @@
 
 # ========================== Task ==================================
 n=int(input("Enter n="))
-peli=n
+#    =================pelidrom num=======sapeli=n
 sum=0
 while(peli!=0):
          rem1=peli%10
          sum=sum*10+rem1
          peli=peli//10
+  # =================Armstrong============
 rev=0
 arm=n
 while(arm!=0):
          rem2=arm%10
          rev=rev+(rem2*rem2*rem2)
          arm=arm//10  
+    # ==============spy num===============
 sum1=0
 spy=n
 multi=1
@@ -167,6 +169,7 @@ while(spy!=0):
           sum1=sum1+rem
           multi=rem*multi
           spy = spy//10
+    # ==================neon num ==============
 neon=n*n
 sum2=0
 while(neon!=0):
@@ -174,12 +177,48 @@ while(neon!=0):
       sum2=sum2+rem3
       neon=neon//10
    
-if(sum==n):
+if(sum==n and rev==n and sum1==multi  and sum1==n ):
+    print("its pelidrom ,armstrong ,spy neon num")
+
+elif(sum==n and rev==n and sum1==multi):
+    print("its pelidrom, armstrong, spy num")
+
+elif(sum==n and rev==n and sum2==n):
+    print("its pelidrom, armstrong, neon num")
+
+elif(sum==n and sum1==multi and sum2==n):
+    print("its pelidrom, spy, neon num")
+
+elif(rev==n and sum1==multi  and sum1==n):
+    print("its  armstrong, spy, neon num")
+
+elif(sum==n and rev==n):
+    print("its pelidrom, armstrong num")
+
+elif(sum==n and  sum1==multi):
+    print("its pelidrom,  spy num")
+
+elif(sum==n and sum2==n):
+    print("its pelidrom,neon num")
+
+elif( rev==n and sum1==multi):
+    print("its armstrong, spy num")
+
+elif(rev==n  and sum2==n):
+    print("its armstrong, neon num") 
+
+elif( sum1==multi and sum2==n):
+    print("its spy, neon num")
+
+elif(sum==n):
     print("its pelidrom num")
+
 elif(rev==n):
-    print("its armstrong num")
+     print("its armstrong num")
+
 elif(sum1==multi):
     print("its spy num")
+
 elif(sum2==n):
       print("its neon num")
 else:
