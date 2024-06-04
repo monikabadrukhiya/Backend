@@ -263,7 +263,21 @@
 #     print()
 
 # 32.pattern ============================
-for i in range(1,6):
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#         print(j*j-1,end=" ")
+#     print()
+
+# 33. pattern =========================
+# k=1
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#         print(k,end=" ")
+#         k=k+1
+#     print()
+
+# 34.pattern ===========================
+for i in range(1,11):
     for j in range(1,i+1):
-        print(j*j-1,end=" ")
+        print(i*j,end=" ")
     print()
