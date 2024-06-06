@@ -291,45 +291,45 @@
 
     #  ===============2nd pattern====================================================
 # 1,pattern============================
-for i in range(1,6):
-    a=1
-    b=0
-    for j in range(1,i+1):
-           a=a+b
-           print(a,end=" ")
-           b=b+1              
-    print()
+# for i in range(1,6):
+#     a=1
+#     b=0
+#     for j in range(1,i+1):
+#            a=a+b
+#            print(a,end=" ")
+#            b=b+1              
+#     print()
 
 # 2.pattern ==========================
-for i in range(1,6):
-    for j in range(1,i+1):
-        print(i*j,end=" ")
-    print()
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#         print(i*j,end=" ")
+#     print()
 
 # 3.pattern==26 pattern================
 # 4.pattern==============================
-for i in range(1,6):
-    k=i
-    for j in  range(1,i+1):
-        print(k,end=" ")
-        k=k*i
-    print()
+# for i in range(1,6):
+#     k=i
+#     for j in  range(1,i+1):
+#         print(k,end=" ")
+#         k=k*i
+#     print()
 
 # 5.pattern=============================
-k=1
-for i in range(1,6):
-    for j in range(1,i+1):
-        print(k*k*k, end=" ")
-        k=k+i
-    print()
+# k=1
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#         print(k*k*k, end=" ")
+#         k=k+i
+#     print()
 
 # 6.pattern===============================
-k=1
-for i in range(1,6):
-    for j in range(1,i+1):
-       print(k,end=" ")
-       k=k+2
-    print()
+# k=1
+# for i in range(1,6):
+#     for j in range(1,i+1):
+#        print(k,end=" ")
+#        k=k+2
+#     print()
 
 # 7.pattern=============================
 for i in range(5,0,-1):
