@@ -51,8 +51,31 @@
 #     print(n[i])
 
 # ============== pass char string return=====================
-list=["moni","mansi","khushal","kinjal","keyuri","panvi","kajal","panthi","prutha"]
-for i in range(0,len(list)):
-    if(list[i][0]=='p'):
-        print(list[i])
+# list=["moni","mansi","khushal","kinjal","keyuri","panvi","kajal","panthi","prutha"]
+# for i in range(0,len(list)):
+#     if(list[i][0]=='p'):
+#         print(list[i])
+
+
+# ====================== insert valuse spesific position ===============
+
+# n=[10,30,45,67,87,37,98,49,100,15]
+# pos=4
+# value=200
+# n=n+[0]
+# for i in range(len(n)-1,pos,-1):
+#     print("==========")
+#     n[i]=n[i-1]
+# n[pos]=value
+
+# for i in range(0,len(n)):
+#    print(n[i])
     
+# ================= delete value specific position ===================
+pos=5
+n=[10,30,45,67,87,37,98,49,100,15]
+for i in range(pos,len(n)-1):
+    n[i]=n[i+1]
+
+for i in range(0,len(n)-1):
+    print(n[i])
