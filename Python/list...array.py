@@ -28,7 +28,7 @@
 # print("max= ",max)
 
 
-# =============== accending array value ==============
+# =============== as    cending array value ==============
 # n=[43,46,76,78,54,12,0,38,54]
 # temp=0
 # for i in range(0,len(n)):
@@ -72,10 +72,41 @@
 #    print(n[i])
     
 # ================= delete value specific position ===================
-pos=5
-n=[10,30,45,67,87,37,98,49,100,15]
-for i in range(pos,len(n)-1):
-    n[i]=n[i+1]
+# pos=5
+# n=[10,30,45,67,87,37,98,49,100,15]
+# for i in range(pos,len(n)-1):
+#     n[i]=n[i+1]
+    
+# for i in range(0,len(n)-1):
+#     print(n[i])
 
-for i in range(0,len(n)-1):
-    print(n[i])
+# =================remove specific multitime value====================
+# list=[10,25,30,10,45,50,10]
+# print(list)
+# new=[]
+# num=10
+# for i in range(len(list)):
+#     if list[i]!=num:
+#         new=new+[list[i]]
+# list=new
+# print(list)
+
+# ===================reverse value=======================
+# list=[2,5,4,7,8]
+# print(list)
+# new=[]
+# for i in range(len(list)-1,-1,-1):
+#     new=new +[list[i]]
+# list=new
+# print(list)
+
+# ===========user input value and print that value===============
+
+list=int(input("Enter n="))
+newarr=[]
+for i in range(list+1):
+    name=(input("Enter n="))
+    newarr.append(name)
+print(newarr)
+
+        

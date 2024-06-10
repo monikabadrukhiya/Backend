@@ -171,8 +171,6 @@ for i in range(1,100):
         neon=neon//10
     if(sum==i):
         print(sum,end=" ")
-        
-
 
 
 

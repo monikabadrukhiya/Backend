@@ -14,7 +14,6 @@
 #     print("its even number")
 # else:
 #     print("its even number")
-
 # ==========find positive value==========
 
 # n=int(input("Enter number="))
@@ -64,8 +63,8 @@
 # d=int(input("d="))
 
 # if(a<b and a<c and a<d ):
-#     print("a is min")
-# elif(b<c and b<d):
+#     print("a is min") 
+# elif(b<c and b<d): 
 #     print("b is min")
 # elif  c<d:
 #     print("c is min")

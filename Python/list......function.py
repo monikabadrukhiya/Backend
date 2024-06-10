@@ -2,6 +2,7 @@ list=[10,40,35,67,89,54,35,97]
 # print(min(list))
 # print(max(list))
 # print(sum(list))
+# print(len(list))
 
 #  append : Add an item to the end of the list. ========================
 # a=[23,65,78,98,23,47,76]
@@ -61,7 +62,7 @@ list=[10,40,35,67,89,54,35,97]
 # a.copy()
 # print(a)
 
-#  list in descending order===========
+# ============== list in descending order===========
 a=[45,56,87,90,100,23,15,10]
 a.sort(reverse=True)
 print(a)
