@@ -1,8 +1,14 @@
-list=[10,40,35,67,89,54,35,97]
+# list=[10,40,35,67,89,54,35,97]
 # print(min(list))
 # print(max(list))
 # print(sum(list))
 # print(len(list))
+
+# del:delete value===============
+list=['m','cdmi',35,97]
+print(list)
+del list[1]
+print(list)
 
 #  append : Add an item to the end of the list. ========================
 # a=[23,65,78,98,23,47,76]
@@ -23,9 +29,9 @@ list=[10,40,35,67,89,54,35,97]
 
 # insert :Insert an item at a given position. The first argument is the index  of the
 #  element before which to insert, so  inserts at the front of the list, 
-# a=[45,76,68,98,90,34,12]
+# `a=[45,76,68,98,90,34,12]
 # a.insert(2,100)
-# print(a)
+# print(a)`
 
 # remove :Remove the first item from the list whose value is equal to list
 # direct add value
@@ -63,12 +69,10 @@ list=[10,40,35,67,89,54,35,97]
 # print(a)
 
 # ============== list in descending order===========
-a=[45,56,87,90,100,23,15,10]
-a.sort(reverse=True)
-print(a)
+# a=[45,56,87,90,100,23,15,10]
+# a.sort(reverse=True)
+# print(a)
 
-b=[45,56,87,90,100,23,15,10]
-b.sort(reverse=False)
-print(b)
-
-
+# b=[45,56,87,90,100,23,15,10]
+# b.sort(reverse=False)
+# print(b)

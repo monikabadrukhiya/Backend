@@ -28,7 +28,7 @@
 # print("max= ",max)
 
 
-# =============== as    cending array value ==============
+# =============== ascending array value ==============
 # n=[43,46,76,78,54,12,0,38,54]
 # temp=0
 # for i in range(0,len(n)):
@@ -102,11 +102,20 @@
 
 # ===========user input value and print that value===============
 
-list=int(input("Enter n="))
-newarr=[]
-for i in range(list+1):
-    name=(input("Enter n="))
-    newarr.append(name)
-print(newarr)
+# list=int(input("Enter n="))
+# newarr=[]
+# for i in range(list+1):
+#     name=(input("Enter n="))
+#     newarr.append(name)
+# print(newarr)
+
+# ============find value divide by 5 & 7 and convert into list================
+# n=[20,47,40,45,50,65,2,30,22,42,14]
+# print(n)
+# new=[]
+# for i in n:
+#     if(i%5 or i%7==0):
+#         new.append(i)
+# print(new)
 
         

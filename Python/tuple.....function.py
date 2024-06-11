@@ -15,45 +15,53 @@
 
 #  append : Add an item to the end of the list. ========================
 # n=([10,40,36,2,28,16,50,90,80])
-# n.append([100])
+# n.append(100)
+# n=tuple(n)
 # print(n)
 
 # extend :Extend the list by appending all the items from the iterable============
 # n=([10,40,36,2,28,16,50,90,80,10])
-# b=([100])
+# b=(100)
 # n.extend(b)
+# n=tuple(n)
 # print(n)
 
 # insert :Insert an item at a given position. The first argument is the index  of the
 #  element before which to insert, so  inserts at the front of the list, 
 # a=([45,76,68,98,90,34,12])
 # a.insert(2,100)
-# print(a)
+# n=tuple(a)
+# print(n)
 
 # remove :Remove the first item from the list whose value is equal to list
 # n=([10,40,36,2,28,16,50,90,80,10])
 # n.remove(2)
+# n=tuple(n)
 # print(n)
 
 #  pop :Remove the item at the given position in the list, and return it. 
 # If no index is specified, removes and returns the last item in the list.
 # n=([10,40,36,2,28,16,50,90,80])
 # n.pop(len(n)-1)
+# n=tuple(n)
 # print(n)
 
 # sort : list gives in accending order
 # n=([10,40,36,2,28,16,50,90,80])
 # n.sort()
+# n=tuple(n)
 # print(n)
 
 # Reverse :Reverse the elements of the list in place.
 # n=([10,40,36,2,28,16,50,90,80])
 # n.reverse()
+# n=tuple(n)
 # print(n)
 
 # ============== list in descending order===========
 # n=([10,40,36,2,28,16,50,90,80])
 # n.sort(reverse=True)
+# n=tuple(n)
 # print(n)
 
 # count :Return the number of times value appears in the list.
@@ -63,5 +71,4 @@
 # index :return pass value index
 # n=(10,40,36,2,28,16,50,90,80,10)
 # print(n.index(2))
-
 
