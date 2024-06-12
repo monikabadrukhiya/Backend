@@ -23,21 +23,21 @@
 # print("lower char =",count2)
 
 # ============ special char count ==================
-n=input("Enter string=")
-count=0
-for i in range(len(n)):
-    if(n[i]=='!' or n[i]=='@' or n[i]=='#'or n[i]=='$'or n[i]=='%' or n[i]=='^'or 
-       n[i]=='&' or n[i]=='*'):
-        count=count+1
-print("special char=",count)
+# n=input("Enter string=")
+# count=0
+# for i in range(len(n)):
+#     if(n[i]=='!' or n[i]=='@' or n[i]=='#'or n[i]=='$'or n[i]=='%' or n[i]=='^'or 
+#        n[i]=='&' or n[i]=='*'):
+#         count=count+1
+# print("special char=",count)
 
 # ===========upper to lower char convert=============
 # n=input("Enter string=")
 # new=n.lower()
-# print("up to lower char="new)
+# print("up to lower char=",new)
 
 # =========lower to upper char convert=============
-# n=input("Enter string=")
-# new=n.upper()
-# print("lower to upper char ="new)
+n=input("Enter string=")
+new=n.upper()
+print("lower to upper char =",new)
 
