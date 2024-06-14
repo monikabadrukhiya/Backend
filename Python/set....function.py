@@ -133,7 +133,7 @@
 # s1={11,12,13,14}
 # print(s.issubset(s1))   #false
 
-# 17.issubset() =returns whether this set contains another set or not=====
+# 17.issuperset() =returns whether this set contains another set or not=====
 # s={1,2,3,4,5}
 # s1={1,2,3,}
 # print(s.issuperset(s1))          #true

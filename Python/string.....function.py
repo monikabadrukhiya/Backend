@@ -45,11 +45,12 @@
 # print(str2)                 #last pos thi ek pos agal count karine true/false ans ape    
 
 # /////////////////////////////////////////////////////////////////////////////
-# 5.find()==it return string between start and end index
+# 5.find()==it return index of the string where substring is found & 
+# return index of first match
 # str="Creative Institute "
-# str2=str.find("Creative")
-# print(str2)                   #0/true
-                                #-1/false
+# str2=str.find("Institute")
+# print(str2)                   #9
+                                #-1
 
 # ///////////////////////////////////////////////////////////////////////////////////
 # 6.format()==it returns formatted version of set,using the passed value
@@ -76,57 +77,70 @@
 # alphanumeric=character which is a letter or number is know as alphanumeric
 # str="creative123"
 # str2=str.isalnum()
-# print(str2)
+# print(str2)                                   #true
 
 # ///////////////////////////////////////////////////////////////////////////////
 # 9.isalpha =check string character are alphabetic or not return true/false
-str="creative"
-str2=str.isalpha()
-print(str2)
+# str="creative"
+# str2=str.isalpha()
+# print(str2)                                       #true
 
-# 10.isdecimal =check all the charcer in string are decimal or not return true/false====
+# /////////////////////////////////////////////////////////////////////////////////
+# 10.isdecimal =check all the charcter in string are decimal or not return true/false
 # str="123"
 # str1="abc"
 # str2=str.isdecimal()
 # str4=str1.isdecimal()
-# print(str2)
-# print(str4)
+# print(str2)                                       #true
+# print(str4)                                       #false
 
-# 11.isdigit()=check all the character in string are digit or not.true/false=====
+# //////////////////////////////////////////////////////////////////////////////
+# 11.isdigit()=check all the character in string are digit or not.true/false
 # str="12345"
 # str2=str.isdigit()
-# print(str2)
+# print(str2)                                       #true
 
-# 12.identifier()= check whether string is a valid identifier or not.true/false=====
+# //////////////////////////////////////////////////////////////////////////////////
+# 12.identifier()= check whether string is a valid identifier or not.true/false
 # str="creative"
 # str2=str.isidentifier()
-# print(str2)
+# print(str2)                                       #true
 
+# str="123"
+# str2=str.isidentifier()
+# print(str2)                                       #false
+
+# //////////////////////////////////////////////////////////////////////////////
 # 13.islower()= check given string all character in lowercase or not.true/false
 # str="creative"
 # str2=str.islower()
-# print(str2)
+# print(str2)                                       #true
 
-# 14.isnumeric()=check all character of the string are numeric character or not.true/false====
+# //////////////////////////////////////////////////////////////////////////////////
+# 14.isnumeric()=check all character of the string are numeric character or not.true/false
 # str="2345"
 # str2=str.isnumeric()
-# print(str2)
+# print(str2)                                         #true
 
+# //////////////////////////////////////////////////////////////////////////////////
 # 15.isupper()= check given string all character in uppercase or not.true/false
 # str="ABCDEF"
 # str2=str.isupper()
-# print(str2)
+# print(str2)                                           #true
 
+# //////////////////////////////////////////////////////////////////////////
 # 16.join()=is used to concat a string with iterable object,return new string 
 # str="/"
 # list=["1","2","3"]
-# print(str.join(list))
+# print(str.join(list))                                 #1/2/3
 
+# ////////////////////////////////////////////////////////////////////////////////
 # 17.lower()=convert upper character into lower character
 # str="Monika Khushal"
-# print(str.lower()) 
+# print(str.lower())                                    #monika khushal
 
-# 18.upper()=conver string lower character into upper character
+# ////////////////////////////////////////////////////////////////////////////////
+# 18.upper()=convert lower character into upper character
 # str="monika barukhiya"
-# print(str.upper())
+# print(str.upper())                                      #MONIKA BARUKHIYA
 
