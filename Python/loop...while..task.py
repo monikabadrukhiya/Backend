@@ -147,7 +147,7 @@
 
 # ========================== Task ==================================
 n=int(input("Enter n="))
-#    =================pelidrom num=======sapeli=n
+#    =================pelidrom num=======``
 sum=0
 while(peli!=0):
          rem1=peli%10

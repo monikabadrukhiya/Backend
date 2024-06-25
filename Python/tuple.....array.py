@@ -122,8 +122,6 @@ for i in n:
         new.append(i)
 arr=(new)
 print(arr)
-   
-
 
 
 

@@ -63,7 +63,7 @@
 # print(d1)                          #{'tues', 'mon', 'sun', 'wed', 'thus'}
 
 # and & operators//
-# and operators(&)= smae items can be returns========
+# and operators(&)= same items can be returns========
 # d1={"mon","tues","sun","wed","sun"}
 # d2={"mon","thus","wed"}
 # print(d1&d2)                                 #{'mon', 'wed'}

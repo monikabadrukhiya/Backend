@@ -1,6 +1,6 @@
 # =========== find static char================
-# list=["creative","monika","panvi","khushal"]
-# print(list[2][4])
+list=["creative","monika","panvi","khushal"]
+print(list[2][4])
 
 
 # ============ array sum==================
@@ -104,7 +104,7 @@
 
 # list=int(input("Enter n="))
 # newarr=[]
-# for i in range(list+1):
+# for i in list:
 #     name=(input("Enter n="))
 #     newarr.append(name)
 # print(newarr)

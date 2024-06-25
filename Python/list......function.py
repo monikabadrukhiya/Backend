@@ -29,9 +29,9 @@ print(list)
 
 # insert :Insert an item at a given position. The first argument is the index  of the
 #  element before which to insert, so  inserts at the front of the list, 
-# `a=[45,76,68,98,90,34,12]
+# a=[45,76,68,98,90,34,12]
 # a.insert(2,100)
-# print(a)`
+# print(a)
 
 # remove :Remove the first item from the list whose value is equal to list
 # direct add value
