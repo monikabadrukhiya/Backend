@@ -37,7 +37,11 @@
 # print("up to lower char=",new)
 
 # =========lower to upper char convert=============
-n=input("Enter string=")
-new=n.upper()
-print("lower to upper char =",new)
+# n=input("Enter string=")
+# new=n.upper()
+# print("lower to upper char =",new)
 
+
+# ======print & get sr n_i_er================
+str="string_is_hear"
+print(str[0:14:2])

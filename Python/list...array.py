@@ -1,6 +1,6 @@
 # =========== find static char================
-list=["creative","monika","panvi","khushal"]
-print(list[2][4])
+# list=["creative","monika","panvi","khushal"]
+# print(list[2][4])
 
 
 # ============ array sum==================
@@ -118,4 +118,7 @@ print(list[2][4])
 #         new.append(i)
 # print(new)
 
-        
+
+# ============print 1 to 10 without loop====================================
+num=list(range(1,11))
+print(num)
