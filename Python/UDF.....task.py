@@ -58,29 +58,256 @@
 # check(s,n)
 
         # ==========  method : 2  ========================
-def sum(n):
-    sum=0
-    while(n!=0):
-        rem=n%10
-        sum=sum+rem
-        n=n//10
-    return(sum)
-def multi(n):
-    multi=1
-    while(n!=0):
-        rem=n%10
-        multi=multi*rem
-        n=n//10
-    return(multi)
-n=int(input("Enter no="))
-a=sum(n)
-b=multi(n)
-print("sum=",a)
-print("multi=",b)
+# def sum(n):
+#     sum=0
+#     while(n!=0):
+#         rem=n%10
+#         sum=sum+rem
+#         n=n//10
+#     return(sum)
+# def multi(n):
+#     multi=1
+#     while(n!=0):
+#         rem=n%10
+#         multi=multi*rem
+#         n=n//10
+#     return(multi)
+# n=int(input("Enter no="))
+# a=sum(n)
+# b=multi(n)
+# print("sum=",a)
+# print("multi=",b)
 
-def check(a,b):
-    if(a==b):
+# def check(a,b):
+#     if(a==b):
+#         print("its spy num")
+#     else:
+#         print("its not spy num")
+# check(a,b)
+
+# ====================  armstrong num===============================
+# def arm(n):
+#     sum=0
+#     while(n!=0):
+#         rem=n%10
+#         sum=sum+(rem*rem*rem)
+#         n=n//10
+#     return(sum)
+# n=int(input("Enter no="))
+# k=arm(n)
+# print("return value",k)
+
+# def check(k,n):
+#     if(k==n):
+#         print("its armstrong no")
+#     else:
+#         print("its not armstrong num")
+# check(n,k)
+
+
+# ========================== neon num=================================
+# def neon(n):
+#     m=n*n
+#     sum=0
+#     while(m!=0):
+#         rem=m%10
+#         sum=sum+rem
+#         m=m//10
+#     return(sum)
+# n=int(input("Enter no="))
+# k=neon(n)
+# print("Return no=",k)
+
+# def check(n,k):
+#     if(n==k):
+#         print("its neon num")
+#     else:
+#         print("its not neon num")
+# check(n,k)
+
+
+# =================  nested function===================
+# def first():
+#     print("keval")
+#     def second():
+#         print("mansi")
+#         def third():
+#             print("panvi")
+#             def forth():
+#                 print("khushal")
+#                 def fifth():
+#                      print("moni")
+#                 return fifth()
+#             return forth()
+#         return third()
+#     return second()
+# first()
+
+# =============================fun call another function=====================
+# def first():
+#     print("hii")
+# def second():
+#     print("hello")
+# def third():
+#     print("wel come")
+# def forth():
+#     print("Bye")
+# def fifth():
+#     first()
+#     second()
+#     third()
+#     forth()
+#     print("moni khushal")
+# fifth()
+
+
+# =============check given num ================================
+# pelidrom
+# armstrong
+# neon
+# spy
+
+def peli(i):
+    sum=0
+    n=i
+    while(n!=0):
+         rem1=n%10
+         sum=sum*10+rem1
+         n=n//10
+    return (sum==i)
+
+def arm(i):
+     n=i
+     rev=0
+     while(n!=0):
+         rem2=n%10
+         rev=rev+(rem2*rem2*rem2)
+         n=n//10
+     return( rev==i)
+
+def spy(i):
+     sum1=0
+     multi=1
+     n=i
+     while(spy!=0):
+        rem=n%10
+        sum1=sum1+rem
+        multi=rem*multi
+        n = n//10      
+     return(sum1==multi)
+
+def neon (i):
+    n=i*i
+    neon=0
+    while(n!=0):
+        rem=n%10
+        neon=neon+rem
+        n=n//10
+    return(neon==i)
+
+i=int(input("Enter num ="))
+pelival=peli(i)
+print("pelidrom value =",pelival)
+
+armval=arm(i)
+print("pelidrom value =",armval)
+
+spyif(sum==n and rev==n and sum1==multi  and sum1==n ):
+    print("its pelidrom ,armstrong ,spy neon num")
+
+elif(sum==n and rev==n and sum1==multi):
+    print("its pelidrom, armstrong, spy num")
+
+elif(sum==n and rev==n and sum2==n):
+    print("its pelidrom, armstrong, neon num")
+
+elif(sum==n and sum1==multi and sum2==n):
+    print("its pelidrom, spy, neon num")
+
+elif(rev==n and sum1==multi  and sum1==n):
+    print("its  armstrong, spy, neon num")
+
+elif(sum==n and rev==n):
+    print("its pelidrom, armstrong num")
+
+elif(sum==n and  sum1==multi):
+    print("its pelidrom,  spy num")
+
+elif(sum==n and sum2==n):
+    print("its pelidrom,neon num")
+
+elif( rev==n and sum1==multi):
+    print("its armstrong, spy num")
+
+elif(rev==n  and sum2==n):
+    print("its armstrong, neon num") 
+
+elif( sum1==multi and sum2==n):
+    print("its spy, neon num")
+
+elif(sum==n):
+    print("its pelidrom num")
+
+elif(rev==n):
+     print("its armstrong num")
+
+elif(sum1==multi):
+    print("its spy num")
+
+elif(sum2==n):
+      print("its neon num")
+else:
+    print("non of this")val=spy(i)
+print("pelidrom value =",spyval)
+
+neonval=neon(i)
+print("pelidrom value =",neonval)
+
+def input(pelival,armval,spyval,neonval):
+    if(sum==n and rev==n and sum1==multi  and sum1==n ):
+    print("its pelidrom ,armstrong ,spy neon num")
+
+elif(sum==n and rev==n and sum1==multi):
+        print("its pelidrom, armstrong, spy num")
+
+        elif(sum==n and rev==n and sum2==n):
+        print("its pelidrom, armstrong, neon num")
+
+        elif(sum==n and sum1==multi and sum2==n):
+        print("its pelidrom, spy, neon num")
+
+        elif(rev==n and sum1==multi  and sum1==n):
+        print("its  armstrong, spy, neon num")
+
+        elif(sum==n and rev==n):
+        print("its pelidrom, armstrong num")
+
+        elif(sum==n and  sum1==multi):
+        print("its pelidrom,  spy num")
+
+        elif(sum==n and sum2==n):
+        print("its pelidrom,neon num")
+
+        elif( rev==n and sum1==multi):
+        print("its armstrong, spy num")
+
+        elif(rev==n  and sum2==n):
+        print("its armstrong, neon num") 
+
+        elif( sum1==multi and sum2==n):
+        print("its spy, neon num")
+
+        elif(sum==n):
+        print("its pelidrom num")
+
+        elif(rev==n):
+        print("its armstrong num")
+
+        elif(sum1==multi):
         print("its spy num")
-    else:
-        print("its not spy num")
-check(a,b)
+
+        elif(sum2==n):
+        print("its neon num")
+        else:
+        print("non of this")
+
