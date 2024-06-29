@@ -189,7 +189,7 @@ def spy(i):
      sum1=0
      multi=1
      n=i
-     while(spy!=0):
+     while(n!=0):
         rem=n%10
         sum1=sum1+rem
         multi=rem*multi
@@ -210,104 +210,46 @@ pelival=peli(i)
 print("pelidrom value =",pelival)
 
 armval=arm(i)
-print("pelidrom value =",armval)
+print("armstrong value =",armval)
 
-spyif(sum==n and rev==n and sum1==multi  and sum1==n ):
-    print("its pelidrom ,armstrong ,spy neon num")
-
-elif(sum==n and rev==n and sum1==multi):
-    print("its pelidrom, armstrong, spy num")
-
-elif(sum==n and rev==n and sum2==n):
-    print("its pelidrom, armstrong, neon num")
-
-elif(sum==n and sum1==multi and sum2==n):
-    print("its pelidrom, spy, neon num")
-
-elif(rev==n and sum1==multi  and sum1==n):
-    print("its  armstrong, spy, neon num")
-
-elif(sum==n and rev==n):
-    print("its pelidrom, armstrong num")
-
-elif(sum==n and  sum1==multi):
-    print("its pelidrom,  spy num")
-
-elif(sum==n and sum2==n):
-    print("its pelidrom,neon num")
-
-elif( rev==n and sum1==multi):
-    print("its armstrong, spy num")
-
-elif(rev==n  and sum2==n):
-    print("its armstrong, neon num") 
-
-elif( sum1==multi and sum2==n):
-    print("its spy, neon num")
-
-elif(sum==n):
-    print("its pelidrom num")
-
-elif(rev==n):
-     print("its armstrong num")
-
-elif(sum1==multi):
-    print("its spy num")
-
-elif(sum2==n):
-      print("its neon num")
-else:
-    print("non of this")val=spy(i)
-print("pelidrom value =",spyval)
+spyval=spy(i)
+print("spy value =",spyval)
 
 neonval=neon(i)
-print("pelidrom value =",neonval)
+print("neon value =",neonval)
 
 def input(pelival,armval,spyval,neonval):
-    if(sum==n and rev==n and sum1==multi  and sum1==n ):
-    print("its pelidrom ,armstrong ,spy neon num")
-
-elif(sum==n and rev==n and sum1==multi):
+    if(pelival==1 and armval==1 and spyval==1 and neonval==1 ):
+         print("its pelidrom ,armstrong ,spy, neon num")
+    elif(pelival==1 and armval==1 and spyval==1):
         print("its pelidrom, armstrong, spy num")
-
-        elif(sum==n and rev==n and sum2==n):
+    elif(pelival==1 and armval==1 and neonval==1):
         print("its pelidrom, armstrong, neon num")
-
-        elif(sum==n and sum1==multi and sum2==n):
+    elif(pelival==1 and spyval==1 and neonval==1):
         print("its pelidrom, spy, neon num")
-
-        elif(rev==n and sum1==multi  and sum1==n):
+    elif(armval==1 and spyval==1  and neonval==1):
         print("its  armstrong, spy, neon num")
-
-        elif(sum==n and rev==n):
+    elif(pelival==1 and armval==1):
         print("its pelidrom, armstrong num")
-
-        elif(sum==n and  sum1==multi):
+    elif(pelival==1 and  spyval==1):
         print("its pelidrom,  spy num")
-
-        elif(sum==n and sum2==n):
+    elif(pelival==1 and neonval==1):
         print("its pelidrom,neon num")
-
-        elif( rev==n and sum1==multi):
+    elif(armval==1 and spyval==1):
         print("its armstrong, spy num")
-
-        elif(rev==n  and sum2==n):
+    elif(armval==1  and neonval==1):
         print("its armstrong, neon num") 
-
-        elif( sum1==multi and sum2==n):
+    elif(spyval==1 and neonval==1):
         print("its spy, neon num")
-
-        elif(sum==n):
+    elif(pelival==1):
         print("its pelidrom num")
-
-        elif(rev==n):
+    elif(armval==1):
         print("its armstrong num")
-
-        elif(sum1==multi):
+    elif(spyval==1):
         print("its spy num")
-
-        elif(sum2==n):
+    elif(neonval==1):
         print("its neon num")
-        else:
+    else:
         print("non of this")
+input(pelival,armval,spyval,neonval)
 
