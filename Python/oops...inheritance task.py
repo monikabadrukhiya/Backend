@@ -1,39 +1,34 @@
-# class demo:
-#     def Hello(self):
-#         print("hello")
-# a=demo()
-# a.Hello()
-# inheritance========================================
+# ============================Inheritance========================================
 # 1.single//////////////////////////////////////////////////////////
-# class demo:
-#     def first(self):
+# class Demo:
+#     def First(self):
 #         self.a=int(input("Enter a="))
 #         self.b=int(input("Enter b="))
-# class demo1(demo):
-#     def second(self):
+# class Demo1(demo):
+#     def Second(self):
 #         total=self.a+self.b
 #         print("total=",total)
-# ans=demo1()
-# ans.first()
-# ans.second()
+# ans=Demo1()
+# ans.First()
+# ans.Second()
 
 # 2.multilevel/////////////////////////////////////////////////////
-# class first:
-#     def user(self):
+# class First:
+#     def User(self):
 #         self.a=int(input("Enter a="))
 #         self.b=int(input("Enter b="))
-# class second(first):
-#     def sum(self):
+# class Second(first):
+#     def Sum(self):
 #         total=self.a+self.b
 #         print("total=",total)
-# class third(second):
-#     def div(self):
+# class Third(second):
+#     def Div(self):
 #         division=self.total//2
 #         print("div=",division)
-# ans=third()
-# ans.user()
-# ans.sum()
-# ans.div()
+# ans=Third()
+# ans.User()
+# ans.Sum()
+# ans.Div()
 
 # 3.multiple /////////////////////////////////////////////////////
 # class first:
