@@ -10,7 +10,7 @@ class First:
         self.a= a+b
 
     def Value(self):
-        return("division=",self.a)
+        return("sum =",self.a)
 ans=First(20,10)
 print(ans.Value())
 
