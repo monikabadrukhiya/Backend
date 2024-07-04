@@ -18,3 +18,5 @@ list=[12,32,34,54]
 list1=lambda s:list.append(s)
 list1(100)
 print(list)
+
+# 

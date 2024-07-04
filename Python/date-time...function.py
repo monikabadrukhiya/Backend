@@ -25,91 +25,91 @@ print("current date time==",d)
 # day=d.strftime("%d")
 # print("day=",day)
 
-# %m==>
+# %m==>return the mmonth of the year ,from 1 to 12
 # month=d.strftime("%m")
 # print(month)
 
-# %y==>
+# %y==>return the year in two digit ,like:19,20,21
 # year=d.strftime("%y")
 # print(year)
 
-# %Y==>
+# %Y==>return the year in four digit ,like:2024
 # year=d.strftime("%Y")
 # print(year)
 
-# %A==>
+# %A==>return the full name of the weekday,    ex:monday
 # wday=d.strftime("%A")
 # print(wday)
 
-# #a==>
+# #a==>return the short name of the weekday, wx:mon
 # wday=d.strftime("%a")
 # print(wday)
 
-# %B==>
+# %B==>return the full name of the month, ex:july
 # month=d.strftime("%B")
 # print(month)
 
-# %b==>
+# %b==>return the short name of the month, ex:apr
 # month=d.strftime("%b")
 # print(month)
 
-# %H==>
+# %H==>return the hour in 24 hr format
 # hour=d.strftime("%H")
 # print(hour)
 
-# %I==>
+# %I==>return the hour in 12 hr formtat
 # hout=d.strftime("%I")
 # print(hour)
 
-# %M==>
+# %M==>return the minutes from 00 to 59
 # min=d.strftime("%M")
 # print(min)
 
-# %S==>
+# %S==>return the second from 00 to 59
 # sec=d.strftime("%S")
 # print(sec)
 
-# %f==>
+# %f==>return the microsconds
 # microsec=d.strftime("%f")
 # print(microsec)
 
-# %p==>
+# %p==>return time in AM/PM format
 # pm=d.strftime("%p")
 # print(pm)
 
-# %c==>
+# %c==>return local's appropriate date time
 # ldatetime=d.strftime("%c")
-# print(ldatetime)
+# print(ldatetime)                                  #Thu Jul  4 10:32:14 2024
 
-# %x==>
+# %x==>return local's appropriate date
 # ldate=d.strftime("%x")
-# print(ldate)
+# print(ldate)                                      #07/04/24
 
-# %X==>
+# %X==>return local's appropriate time
 # ltime=d.strftime("%X")
-# print(ltime)
+# print(ltime)                                      #10:34:52
 
-# %z==>
+# %z==>return the UTC offset(empty string if the object is naive)
 # day=d.strftime("%z")
 # print(day)
 
-# %Z==>
+# %Z==>return time zone name(empty string if the object is naive)
 # day=d.strftime("%Z")
 # print(day)
 
-# %j==>
+# %j==>return the day of the year from 01 to 366
 # dyear=d.strftime("%j")
-# print(dyear)
+# print(dyear)                                  
 
-# %w==>
+# %w==>return weekday as a decimal number,where 0 is sunday and 6 is suturday
 # weekday=d.strftime("%w")
 # print(weekday)
 
-# %u==>
-# wyear=d.strftime("%u")
+# %U==>return the week number of the year(sunday as the first day of the year)
+# wyear=d.strftime("%U")
 # print(wyear)
 
-# %W==>
+# %W==>return the week number of the year(monday as the first day of the year)
 # wyear=d.strftime("%W")
 # print(wyear)
 
