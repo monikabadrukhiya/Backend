@@ -9,5 +9,21 @@
 #     a.append(i)
 # print(a)
 
-
+# ================= filter sunction in pelidrome ========================
+i=[121,234,2,34,56,5776,756,1]
+def Value(i):
+        n=i
+        sum=0
+        rem=0
+        while(n!=0):
+            rem=n%10
+            sum=sum*10+rem
+            n=n//10
+            if sum==i:
+              return sum  
+get=filter(Value,i)
+ans=[]
+for i in get:
+    ans.append(i)
+print(ans)
 
