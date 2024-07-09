@@ -23,8 +23,6 @@ ans=(spy(i))
 def check (ans,i):
     if ans==1:
         print("its spy no")
-    else:
-        print("its not spy no")
 check(ans,i)
 try:
     spy()
