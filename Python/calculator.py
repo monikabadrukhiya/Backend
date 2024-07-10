@@ -44,7 +44,7 @@ win.minsize(120,120)
 a=Label(text="Calculator")
 a.place(x=1,y=1)
 
-b=Entry(win,textvar=equation)
+b=Entry(win,textvariable=equation)
 b.place(x=1,y=20)
 
 c=Button(win,text='AC',command=lambda: Btn_clear())
