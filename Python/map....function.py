@@ -13,10 +13,10 @@
 # print(tuple(ans))
 
 # ================= map function in set ===========
-# def Value(n):
-#     if n%2==0:
-#         return n
-# set = {23,43,54,22,88}
-# ans=map(Value,set)
-# print(list(ans))
+def Value(n):
+    if n%2==0:
+        return n
+set = {23,43,54,22,88}
+ans=map(Value,set)
+print(list(ans))
 

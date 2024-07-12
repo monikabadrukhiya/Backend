@@ -1,5 +1,5 @@
 # =========== Read file =================
-file=open('python/check.txt','r')
+# file=open('python/check.txt','r')
 # for i in file:
 #     print(i)
 

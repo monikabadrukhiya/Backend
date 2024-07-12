@@ -13,7 +13,3 @@ print(num)
 
 num=math.factorial(5)
 print(num)
-
-a={23,45,76,87,98,12,2}
-num=min(a)
-print(num)

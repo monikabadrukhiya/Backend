@@ -93,7 +93,7 @@
 # d1={"mohit","khushal","kinjal","moni"}
 # print(d.difference(d1))                         # {'panvi', 'keyuri'}
 
-# 12.difference_update()===
+# 12.difference_update()==remove the item in the set that are included in another
 # d={"moni","panvi","keyuri","kinjal"}
 # d1={"mohit","khushal","kinjal","moni"}
 # d.difference_update(d1)

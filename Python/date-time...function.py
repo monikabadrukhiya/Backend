@@ -25,7 +25,7 @@ print("current date time==",d)
 # day=d.strftime("%d")
 # print("day=",day)
 
-# %m==>return the mmonth of the year ,from 1 to 12
+# %m==>return the month of the year ,from 1 to 12
 # month=d.strftime("%m")
 # print(month)
 
