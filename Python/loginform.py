@@ -30,6 +30,7 @@ def Login():
         print("Go Back")
     value.set("")
     value1.set("")
+    value2.set("")
 
 win.title("Registration Form")
 

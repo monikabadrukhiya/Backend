@@ -3,7 +3,7 @@ win=Tk()
 current=""
 equation=StringVar()    #special variable used in tkinter to hold string value
 
-#  for click button
+#  for click button 
 def Btn_click(item):
     global current
     current=b.get()
