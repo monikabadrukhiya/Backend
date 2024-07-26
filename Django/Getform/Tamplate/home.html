@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+        <form action="{% url 'Dataget' %}" method="GET" >
+             <table border="1"  align="center" cellspacing="0">
+                <tr>
+                    <th align="center" colspan="2">Form</th>
+                </tr>
+                <tr>
+                    <td >Name</td>
+                    <td><input type="text" name="name" id=""></td>
+                </tr>
+                <tr>
+                    <td> Email</td>
+                    <td><input type="email" name="Email" id=""></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" id=""></td>
+                </tr>
+                <tr>
+                    <td>Number </td>
+                    <td><input type="number" name="number" id=""></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="Gender" id="" value="Male">Male
+                        <input type="radio" name="Gender" id="" value="Female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" value="">Submit</td>
+                </tr>
+             </table>
+       </form>
+    
+</body>
+</html>
