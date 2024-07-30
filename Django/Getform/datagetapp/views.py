@@ -17,6 +17,7 @@ def Dataget(request):
         'Password':Password,
         'Number':Number,
         'Gender':Gender
-
+        
     }
-    return render(request,"dataget.html",data)
+    return render(request,"home.html",data)
+

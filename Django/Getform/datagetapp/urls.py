@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     path('',views.Home),
-    path('Dataget/',views.Dataget, name='Dataget'),
+    path('Dataget',views.Dataget),
     path('admin/', admin.site.urls),
 ]

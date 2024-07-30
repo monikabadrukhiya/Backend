@@ -6,7 +6,7 @@
     <title>Homepage</title>
 </head>
 <body>
-        <form action="{% url 'Dataget' %}" method="GET" >
+        <form action="Dataget" method="GET" >
              <table border="1"  align="center" cellspacing="0">
                 <tr>
                     <th align="center" colspan="2">Form</th>
@@ -35,10 +35,27 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><input type="submit" value="">Submit</td>
+                    <td colspan="2" align="center"><input type="submit" value="Submit"></td>
                 </tr>
              </table>
        </form>
-    
+       <table border="1">
+        <tbody>
+            <tr>
+                <td>
+                    <h1>User Information</h1>
+                    <p>Name:{{Name}}</p> 
+                    <p> Email:{{Email}}</p>
+                    <p> Password:{{Password}}</p>
+                    <p> Number:{{Number}}</p>
+                    <p> Gender:{{Gender}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Delete"></td>
+            </tr>
+           
+        </tbody>
+    </table>
 </body>
 </html>
