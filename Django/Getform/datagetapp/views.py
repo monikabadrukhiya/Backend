@@ -21,3 +21,5 @@ def Dataget(request):
     }
     return render(request,"home.html",data)
 
+
+
