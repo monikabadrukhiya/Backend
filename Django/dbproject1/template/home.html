@@ -35,8 +35,9 @@
       <tr>
         <td>{{user.username}}</td>
         <td>{{user.password}}</td>
-        <td><a href="/delete/{{user.id}}">Delete</a></td>
-        <!-- <td><a href="Delete">Update</a></td> -->
+        <td><a href="delete?deleteid={{user.id}}">Delete</a></td>
+        <td><a href="edit?editid={{user.id}}">Edit</a></td>
+      
       </tr>
       {% endfor %}
     </tbody>
