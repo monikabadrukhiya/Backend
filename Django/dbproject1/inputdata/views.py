@@ -12,7 +12,7 @@ def Home(request):
     return render(request,"home.html",{'user_list':user_list})
 
 def Adddata(request):
-      id=request.GET.get('id')
+      id=request.POST.get('id')
       username=request.POST.get('username')
       password=request.POST.get('pswd')
       print("username=========",username)
@@ -33,9 +33,10 @@ def Delete(request):
 
 def Edituser(request):
      editid=request.GET.get('editid')
-     print("edi====================",id)
-     editdata=login.objects.filter(id=editid)
-     return render(request,"home.html",{"editdata":editdata})
+     print("edi====================",editid)
+     editdata=login.objects.get(id=editid)
+     print("Editdata===========",editdata)
+     return render(request,"home.html",{'editdata':editdata})
 
     
 

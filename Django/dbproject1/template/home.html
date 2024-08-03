@@ -11,15 +11,19 @@
 
 <div class="container mt-3">
   <h2>Form</h2>
-  <form action="{% url 'Home'%}" method="POST">
+  <form action="{% url 'Adddata'%}" method="POST">
     {% csrf_token %}
     <div class="mb-3 mt-3">
-      <label for="email">Email:</label>
-      <input type="text" class="form-control" id="username" placeholder="username" name="username">
+      <label for="id">id:</label>
+      <input type="text"name="id"value="{% if editdata %}{{editdata.id}}{% endif %}">
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="username">username:</label>
+      <input type="text" class="form-control" value="{% if editdata %}{{editdata.username}}{% endif %}" id="username" placeholder="username" name="username">
     </div>
     <div class="mb-3">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+      <input type="password" class="form-control" value="{% if editdata %}{{editdata.password}}{% endif %}" id="pwd" placeholder="Enter password" name="pswd">
     </div>
     <input type="submit" class="btn btn-primary" value="Submit" name="submit" >
   </form>
