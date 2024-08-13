@@ -3,7 +3,7 @@
 #     return n+n
 # l=[2,4,14,20]
 # ans=map(sum,l)
-# print(list(l))
+# print(list(ans))
 
 # ============== map function in tuple ==============
 # def Get(n):

@@ -6,25 +6,29 @@
     <title>home</title>
 </head>
 <body>
-    <form action="add" method="post">
-        {% csrf_token %}
+    <form action="add" method="get">
+
         <table border="1" align="center">
             <tr><th colspan="3">Result</th></tr>
             <tr>
+                <td>Id</td>
+                <td><input type="text" name="id" value="{% if all %}{{all.id}}{% endif %}" ></td>
+            </tr>
+            <tr>
                 <td>Name</td>
-                <td><input type="text" name="name"></td>
+                <td><input type="text" name="name"value="{% if all %}{{all.name}}{% endif %}"></td>
             </tr>
             <tr>
                 <td>maths</td>
-                <td><input type="text" name="maths"></td>
+                <td><input type="text" name="maths"value="{% if all %}{{all.maths}}{% endif %}"></td>
             </tr>
             <tr>
                 <td>sci</td>
-                <td><input type="text" name="sci"></td>
+                <td><input type="text" name="sci"value="{% if all %}{{all.sci}}{% endif %}"></td>
             </tr>
             <tr>
                 <td>phy</td>
-                <td><input type="text" name="phy"></td>
+                <td><input type="text" name="phy"value="{% if all %}{{all.phy}}{% endif %}"></td>
             </tr>
              <tr align="center">
                 <td colspan="3"><input type="submit" value="submit"></td>
@@ -33,6 +37,7 @@
     </form>
     <table border="1">
         <tr>
+            <td>ID</td>
             <td>Name</td>
             <td>Maths</td>
             <td>Science</td>
@@ -40,10 +45,12 @@
             <td>Total</td>
             <td>Percentage</td>
             <td>Delete</td>
+            <td>Edit</td>
         </tr>
         
         {% for i in data %}
         <tr>
+            <td>{{i.id}}</td>
             <td>{{i.name}}</td>
             <td>{{i.maths}}</td>
             <td>{{i.sci}}</td>
@@ -51,6 +58,7 @@
             <td>{{i.total}}</td>
             <td>{{i.per}}</td>
             <td><a href="/delete?id={{i.id}}">Delete</a></td>
+            <td><a href="/edit?editid={{i.id}}">Edit</a></td>
         </tr>
         {% endfor %}
     </table>

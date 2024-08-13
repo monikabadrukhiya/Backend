@@ -1,5 +1,5 @@
 """
-URL configuration for dbresult project.
+URL configuration for signuppage project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -19,8 +19,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('',views.Home, name='Home'),
-    path('add',views.Adddata, name='Adddata'),
-    path('edit',views.Editdata,name='Editdata'),
-    path('delete',views.Delete ),
+    path('',views.Home),
+    path('add/',views.Adddata,name="Adddata"),
+    path('loginclick',views.loginclick),
+    path('login/',views.Logindata,name="Logindata"),
+    path('admin/', admin.site.urls),
 ]

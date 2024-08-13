@@ -19,11 +19,11 @@
 
 # =============find maximun===========
 # n=(29,49,59,69,10,20)
-# min=n[0]
+# max=n[0]
 # for i in range(0,len(n)):
-#     if(min<n[i]):
-#         min=n[i]
-# print("min=",min)
+#     if(max<n[i]):
+#         max=n[i]
+# print("max=",max)
 
 # ============== pass char string return=====================
 # n=("moni","mansi","khushal","kinjal","keyuri","panvi","kajal","panthi","prutha")

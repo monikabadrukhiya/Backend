@@ -9,7 +9,7 @@
 #     a.append(i)
 # print(a)
 
-# ================= filter sunction in pelidrome ========================
+# ================= filter function in pelidrome ========================
 i=[121,234,2,34,56,5776,756,1]
 def Value(i):
         n=i

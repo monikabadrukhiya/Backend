@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <tr align="right">
+    <td ><button ><a href="/">Signup</a></button></td>
+    <td><button><a href="loginclick">Login</a></button></td>
+  </tr>
+  <h2>signup form</h2>
+  <form action="{% url 'Adddata'%}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <div class="form-group">
+        <label for="username">username:</label>
+        <input type="test" class="form-control" id="username" placeholder="username" name="username">
+      </div>
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="form-group">
+      <label for="pwd">re_EnterPassword:</label>
+      <input type="password" class="form-control" id="re_Enterpassword" placeholder="re_Enterpassword" name="re_Enterpassword">
+    </div>
+    <button type="submit" class="btn btn-primary" name="submit" value="Submit">Submit</button>
+  </form>
+</div>
+{% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+</body>
+</html>
