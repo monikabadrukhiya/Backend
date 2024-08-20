@@ -24,14 +24,16 @@ def loginclick(request):
     return render(request,'login.html') 
 
 def Logindata(request):
-    data=Login.objects.all()
-    if request.POST.get('subnit')=='Submit':
+    if request.POST.get('submit')=='Submit':
         lusername=request.POST.get('username')
         lpassword=request.POST.get('pwd')
-        if data==lusername and data==lpassword:
-            return render(request,"success.html")
-        else:
-           return render(request,"login.html")
+        print("lname============",lusername)
+        print("lpass==////////////////",lpassword),
+    user=Login.objects.filter(username=lusername,password=lpassword).first()
+    if user:
+        return render(request,"success.html")
+    else:
+        return render(request,"login.html")
 
     
 

@@ -1,5 +1,5 @@
 """
-URL configuration for dbresult project.
+URL configuration for examproject project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,11 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .import views
+from . import views
 
 urlpatterns = [
-    path('',views.Home, name='Home'),
-    path('add',views.Adddata, name='Adddata'),
-    path('edit',views.Editdata,name='Editdata'),
-    path('delete',views.Delete ),
+    path('',views.Home),
+    path('add',views.Getdata),
+    path('delete',views.Delete),
+    path('edit',views.Editdata),
+    path('view',views.viewdata),
+    path('admin/', admin.site.urls),
 ]

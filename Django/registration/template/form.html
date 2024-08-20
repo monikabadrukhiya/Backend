@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="{% url 'Getdata' %}" method="post">
+        {% csrf_token %}
+        <table border="1">
+            <tr >
+                <th colspan="7" align="center">Register Form</th>
+            </tr>
+            <tr>
+                <td>ID</td>
+                <td><input type="id" name="id" value="{% if alldata %}{{alldata.id}}{% endif %}"></td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td colspan="5"><input type="text" name="name" value="{% if alldata %}{{alldata.Name}}{% endif %}"></td>
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td colspan="5"><input type="number" name="number" id=""value="{% if alldata %}{{alldata.ContactNo}}{% endif %}"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+
+                    <input type="radio" name="gender" id=""value="Female" {% if alldata.Gender == 'Female' %} checked {% endif %}>Female
+                    <input type="radio" name="gender" id=""value="Male" {% if alldata.Gender == 'Male' %} checked {% endif %}>Male
+                </td>
+            </tr>
+            <tr>
+                <td>Hobby</td>
+                <td>
+
+                    <input type="checkbox" name="hobby" id=""value="Dancing" {% if 'Dancing' in alldata.Hobby %} checked {% endif %}>Dancing
+                    <input type="checkbox" name="hobby" id=""value="Singing" {% if 'Singing' in alldata.Hobby %} checked {% endif %}>Singing
+                    <input type="checkbox" name="hobby" id=""value="Reading" {% if 'Reading' in alldata.Hobby %} checked {% endif %}>Reading
+                    <input type="checkbox" name="hobby" id=""value="Painting" {% if 'Painting' in alldata.Hobby %} checked {% endif %}>Painting
+                    <input type="checkbox" name="hobby" id=""value="Writing" {% if 'Writing' in alldata.Hobby %} checked {% endif %}>Writing
+                </td>
+            </tr>
+            <tr>
+                <td>Select City</td>
+                <td>
+                    <select name="city" id="">
+                        <option value="Surat" {% if alldata.City == 'Surat' %} selected {% endif %} >Surat</option>
+                        <option value="Rajkot"  {% if alldata.City == 'Rajkot' %} selected {% endif %}>Rajkot</option>
+                        <option value="Bhavanagar" {% if alldata.City == 'Bhavanagar' %} selected {% endif %}>Bhavanagar</option>
+                        <option value="Ahemadabad" {% if alldata.City == 'Ahemadabad' %} selected {% endif %}>Ahemadabad</option>
+                        <option value="Mumbai" {% if alldata.City == 'Mumbai' %} selected {% endif %}>Mumbai</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6"><input type="submit" value="Submit" name="submit"></td>
+            </tr>
+        </table>
+    </form>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Contact No</td>
+            <td>Gender</td>
+            <td>Hobby</td>
+            <td>City</td>
+            <td>Delete</td>
+            <td>Edit</td>
+        </tr>
+        {% for i in data %}
+        <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.Name}}</td>
+                <td>{{i.ContactNo}}</td>
+                <td>{{i.Gender}}</td>
+                <td>{{i.Hobby}}</td>
+                <td>{{i.City}}</td>
+                <td><a href="/delete?deleteid={{i.id}}">Delete</a></td>
+                <td><a href="/edit?editid={{i.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

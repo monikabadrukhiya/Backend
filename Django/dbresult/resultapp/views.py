@@ -17,7 +17,7 @@ def Adddata(request):
     total=int(maths)+int(sci)+int(phy)
     per=total / 3
     
-    if(name and int(maths) and int(sci) and int(phy)):
+    if(id):
         Login.objects.filter(id=id).update(name=name,maths=int(maths),sci=int(sci),phy=int(phy),total=total,per=per)
         return redirect("/")
     else:

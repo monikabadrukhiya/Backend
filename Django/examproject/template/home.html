@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+</head>
+<body>
+    <form action="add" method="get">
+        <table border="1">
+            <th colspan="2">Tamplate </th>
+            <tr>
+                <td>id</td>
+                <td><input type="id" name="id"  value={% if alldata%}{{alldata.id}}{% endif %}></td>
+            </tr>
+            <tr>
+                <td>Heading</td>
+                <td><input type="text" name="heading" value={% if alldata%}{{alldata.Header}}{% endif %}></td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td><input type="text" name="description" value={% if alldata%}{{alldata.Disctiption}}{% endif %}></td>
+            </tr>
+            <tr>
+                <td>Readmore</td>
+                <td><input type="text" name="readmore" value={% if alldata%}{{alldata.Readmore}}{% endif %}></td
+            </tr>
+            <tr>
+                <td>Footer</td>
+                <td><input type="text" name="footer" value={% if alldata%}{{alldata.footer}}{% endif %}></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+    <table border="1">
+            <tr>
+                 <td>id</td>
+                 <td>headear</td>
+                 <td>Description</td>
+                 <td>Readmore</td>
+                 <td>Footer</td>
+                 <td>Delete</td>
+                 <td>Edit</td>
+            </tr>
+            {% for i in data %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.Header}}</td>
+                    <td>{{i.Disctiption}}</td>
+                    <td>{{i.Readmore}}</td>
+                    <td>{{i.footer}}</td>
+                    <td><a href="/delete?deleteid={{i.id}}">Delete</a></td>
+                    <td><a href="/edit?editid={{i.id}}">Edit</a></td>
+                </tr>
+            {% endfor %}     
+    </table>
+    <tr>
+        <td>
+            <button><a href="view">Show Tamplate</a></button>
+        </td>
+    </tr>
+</body>
+</html>
