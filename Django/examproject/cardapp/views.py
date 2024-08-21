@@ -20,7 +20,7 @@ def Getdata(request):
     
 def Delete(request):
     delid=request.GET.get('deleteid')
-    if(id and int(id)>=0):
+    if(delid and int(delid)>=0):
      Form.objects.get(id=delid).delete()
      return redirect("/")
     

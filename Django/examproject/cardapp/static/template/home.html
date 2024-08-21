@@ -1,9 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
     <form action="add" method="get">
@@ -11,23 +13,23 @@
             <th colspan="2">Tamplate </th>
             <tr>
                 <td>id</td>
-                <td><input type="id" name="id"  value={% if alldata%}{{alldata.id}}{% endif %}></td>
+                <td><input type="id" name="id"  value={% if alldata %}{{alldata.id}}{% endif %}></td>
             </tr>
             <tr>
                 <td>Heading</td>
-                <td><input type="text" name="heading" value={% if alldata%}{{alldata.Header}}{% endif %}></td>
+                <td><input type="text" name="heading" value={% if alldata %}{{alldata.Header}}{% endif %}></td>
             </tr>
             <tr>
                 <td>Description</td>
-                <td><input type="text" name="description" value={% if alldata%}{{alldata.Disctiption}}{% endif %}></td>
+                <td><input type="text" name="description" value={% if alldata %}{{alldata.Disctiption}}{% endif %}></td>
             </tr>
             <tr>
                 <td>Readmore</td>
-                <td><input type="text" name="readmore" value={% if alldata%}{{alldata.Readmore}}{% endif %}></td
+                <td><input type="text" name="readmore" value={% if alldata %}{{alldata.Readmore}}{% endif %}></td
             </tr>
             <tr>
                 <td>Footer</td>
-                <td><input type="text" name="footer" value={% if alldata%}{{alldata.footer}}{% endif %}></td>
+                <td><input type="text" name="footer" value={% if alldata %}{{alldata.footer}}{% endif %}></td>
             </tr>
             <tr>
                 <td colspan="2"><input type="submit" value="Submit"></td>

@@ -1,0 +1,14 @@
+td{
+    color: black;
+    font-weight: bold;
+}
+.card-body{
+    border-radius: 50px;
+    border-color: whitesmoke;
+}
+.card-title{
+    color: red;
+}
+.card-img-top{
+    border-radius: 10px;
+}
