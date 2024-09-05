@@ -68,7 +68,7 @@
 # d2={"mon","thus","wed"}
 # print(d1&d2)                                 #{'mon', 'wed'}
 
-# 9.intesection()= it modified the original set by removing the unwanted itemd
+# 9.intersection()= it modified the original set by removing the unwanted itemd
 # this method return new set =============
 # d1={"mon","tues","sun","wed","sun"}
 # d2={"mon","thus","wed"}

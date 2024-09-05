@@ -30,7 +30,7 @@ def Btn_click():
         userid=ent8.get()
         password=ent9.get()
         sname=ent10.get()
-        # age=ent11.get()
+        # age=ent6.get()
         # num=ent12.get()
         
         data=[name,lname,sname,dob,qualification,userid,password,age,num]
