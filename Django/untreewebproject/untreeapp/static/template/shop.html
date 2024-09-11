@@ -51,7 +51,7 @@
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 						<li><a class="nav-link" href="#"><img src="{% static 'images/user.svg' %}"></a></li>
-						<li><a class="nav-link" href="cart"><img src="{% static 'images/cart.svg' %}"></a></li>
+						<li><a class="nav-link" href="data"><img src="{% static 'images/cart.svg' %}"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -83,12 +83,12 @@
 		      	<div class="row">
  {% for i in shopdata %}
 					<!-- Start Column 1 -->
+					 
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+						<a class="product-item" href="/cart?getid={{i.id}}">
 							<img src="{{i.Photo.url}}" class="img-fluid product-thumbnail">
 							<h3 class="product-title">{{i.Title}}</h3>
-							<strong class="product-price">{{i.Price}}</strong>
-							
+							<strong class="product-price">${{i.Price}}</strong>
 							<span class="icon-cross">
 								<img src="{% static 'images/cross.svg' %}" class="img-fluid">
 								</span>

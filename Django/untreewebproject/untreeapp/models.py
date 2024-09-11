@@ -18,7 +18,7 @@ class UserEnter(models.Model):
 class Shopdata(models.Model):
     Photo=models.ImageField(upload_to='image/')
     Title=models.CharField(max_length=50)
-    Price=models.CharField(max_length=10)
+    Price=models.IntegerField(max_length=10)
 
 class Aboutdata(models.Model):
     Photo=models.ImageField(upload_to='image/')
@@ -32,6 +32,15 @@ class Servicesdata(models.Model):
     LName=models.CharField(max_length=50)
     Email=models.CharField(max_length=50)
     Message=models.CharField(max_length=200)
+
+class Cart(models.Model):
+    Photo=models.ImageField(upload_to='image/')
+    Product=models.CharField(max_length=20)
+    Price=models.IntegerField(max_length=10)
+    Quantity=models.IntegerField(default=1)
+    Total=models.IntegerField(default=0)
+
+
 
 
 

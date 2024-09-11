@@ -51,7 +51,7 @@
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
 						<li><a class="nav-link" href="#"><img src="{% static 'images/user.svg'%}"></a></li>
-						<li><a class="nav-link" href="cart"><img src="{% static 'images/cart.svg'%}"></a></li>
+						<li><a class="nav-link" href="data"><img src="{% static 'images/cart.svg'%}"></a></li>
 					</ul>
 				</div>
 			</div>
@@ -95,31 +95,32 @@
                         </tr>
                       </thead>
                       <tbody>
+{% for i in cdata%}
                         <tr>
                           <td class="product-thumbnail">
-                            <img src="{% static 'images/product-1.png' %}" alt="Image" class="img-fluid">
+                            <img src="{{i.Photo.url}}" alt="Image" class="img-fluid">
                           </td>
                           <td class="product-name">
-                            <h2 class="h5 text-black">Product 1</h2>
+                            <h2 class="h5 text-black">{{i.Product}}</h2>
                           </td>
-                          <td>$49.00</td>
+                          <td>${{i.Price}}</td>
                           <td>
                             <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
                               <div class="input-group-prepend">
-                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
+                                <button class="btn btn-outline-black decrease" type="button"><a style="text-decoration: none;" href="/quantity?itemid={{i.id}}&actionid=decrease" >&minus;</a></button>
                               </div>
-                              <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                              <input type="text" class="form-control text-center quantity-amount"value="{{i.Quantity}}" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
                               <div class="input-group-append">
-                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
+                                <button class="btn btn-outline-black increase" type="button"><a style="text-decoration: none;" href="/quantity?itemid={{i.id}}&actionid=increase">&plus;</a></button>
                               </div>
                             </div>
         
                           </td>
-                          <td>$49.00</td>
-                          <td><a href="#" class="btn btn-black btn-sm">X</a></td>
+                          <td>${{i.Total}}</td>
+                          <td><a href="/delete?deleteid={{i.id}}" class="btn btn-black btn-sm">X</a></td>
                         </tr>
-        
-                        <tr>
+{% endfor %}
+                        {% comment %} <tr>
                           <td class="product-thumbnail">
                             <img src="{% static 'images/product-2.png' %}" alt="Image" class="img-fluid">
                           </td>
@@ -141,7 +142,7 @@
                           </td>
                           <td>$49.00</td>
                           <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-                        </tr>
+                        </tr> {% endcomment %}
                       </tbody>
                     </table>
                   </div>
@@ -181,20 +182,20 @@
                       </div>
                       <div class="row mb-3">
                         <div class="col-md-6">
-                          <span class="text-black">Subtotal</span>
+                          <span class="text-black">Grade Total</span>
                         </div>
                         <div class="col-md-6 text-right">
-                          <strong class="text-black">$230.00</strong>
+                          <strong class="text-black">${{grand_total}}</strong>
                         </div>
                       </div>
-                      <div class="row mb-5">
+                      {% comment %} <div class="row mb-5">
                         <div class="col-md-6">
                           <span class="text-black">Total</span>
                         </div>
                         <div class="col-md-6 text-right">
-                          <strong class="text-black">$230.00</strong>
+                          <strong class="text-black">${{i.Total}}</strong>
                         </div>
-                      </div>
+                      </div> {% endcomment %}
         
                       <div class="row">
                         <div class="col-md-12">
