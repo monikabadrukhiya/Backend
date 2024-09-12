@@ -41,6 +41,23 @@ class Cart(models.Model):
     Total=models.IntegerField(default=0)
 
 
+class Checkout(models.Model):
+    Country =models.CharField(max_length=20)
+    FName=models.CharField(max_length=50)
+    LName=models.CharField(max_length=50)
+    Company=models.CharField(max_length=50)
+    Address =models.CharField(max_length=50)
+    State  =models.CharField(max_length=50)
+    Zip=models.IntegerField(max_length=50)
+    Email=models.CharField(max_length=50)
+    Phone =models.IntegerField(max_length=50)
+    Note=models.CharField(max_length=200)
+    CouponCode =models.IntegerField(max_length=50)
+    Password=models.CharField(max_length=20)
+
+
+
+
 
 
 

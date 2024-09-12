@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from untreeapp.models import Dataentry,Indexblog,UserEnter,Shopdata,Aboutdata,Servicesdata,Cart
+from untreeapp.models import Dataentry,Indexblog,UserEnter,Shopdata,Aboutdata,Servicesdata,Cart,Checkout
 def Home(request):
     indexdata=Dataentry.objects.all()
     iblogdata=Indexblog.objects.all()
@@ -23,15 +23,11 @@ def Blog(request):
     return render(request,"blog.html",{'iblogdata':iblogdata})
 
 def Cartt(request):
-    cartdata=Cart.objects.all()
-
     id=request.GET.get('getid')
-    # quantity = request.GET.get('quantity', 1)
     sid=Shopdata.objects.filter(id=id).first()
     sPhoto=sid.Photo
     sProduct=sid.Title 
     sprice=sid.Price
-    
     
     Cart.objects.create(Photo=sPhoto,Product=sProduct,Price=sprice)
     return redirect("/data")
@@ -67,9 +63,33 @@ def Delete(request):
           Cart.objects.get(id=int(id)).delete()
           return redirect("/data")
      
+def Checkoutt(request):
+     checkdata=Checkout.objects.all()
+     cartdata=Cart.objects.all()
+     sum=0
+     for i in cartdata:
+        total=i.Quantity * int(i.Price)
+        sum=sum+total
+     return render(request,"checkout.html",{"checkdata":checkdata,"cartdata":cartdata,"grand_total":sum})
+     
 
-def Checkout(request):
-    return render(request,"checkout.html")
+def Checkoudata(request):
+    country=request.GET.get('c_city')
+    fname=request.GET.get('c_fname')
+    lname=request.GET.get('c_lname')
+    company=request.GET.get('c_company')
+    address=request.GET.get('c_address')
+    state=request.GET.get('c_state')
+    zip=request.GET.get('c_zip')
+    email=request.GET.get('c_email')
+    phone=request.GET.get('c_phone')
+    password=request.GET.get('c_password')
+    note=request.GET.get('note')
+    code=request.GET.get('c_code')
+
+    Checkout.objects.create(Country=country,FName=fname,LName=lname,Company=company,Address=address,State=state
+    ,Zip=zip,Email=email,Phone=phone,Note=note,CouponCode=code,Password=password)
+    return redirect("/chekdata")
 
 def Contact(request):
     cdata=Servicesdata.objects.all()
@@ -97,4 +117,5 @@ def Shop(request):
     return render(request,"shop.html",{'shopdata':shopdata})
 
 def Thankyou(request):
+
     return render(request,"thankyou.html")
