@@ -89,7 +89,7 @@ def Checkoudata(request):
 
     Checkout.objects.create(Country=country,FName=fname,LName=lname,Company=company,Address=address,State=state
     ,Zip=zip,Email=email,Phone=phone,Note=note,CouponCode=code,Password=password)
-    return redirect("/chekdata")
+    return redirect("/thankyou")
 
 def Contact(request):
     cdata=Servicesdata.objects.all()

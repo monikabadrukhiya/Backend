@@ -7,7 +7,7 @@ def Home(request):
 
 def Adddata(request):
     if request.POST.get('submit')=='Submit':
-        id=request.POST.get('id')
+        # id=request.POST.get('id')
         username=request.POST.get('username')
         email=request.POST.get('email')
         pwd=request.POST.get('pwd')

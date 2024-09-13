@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table border="1px">
+            <tr>
+                <td>Username</td>
+                <td>Password</td> 
+                <td><button><a href="/">Logout</a></button></td>
+            </tr>
+{% comment %} {% if user%}
+        <p>{{user}}</p>
+{% endif %} {% endcomment %}
+{% if userdata %}
+            <tr>
+                <td>{{userdata}}</td>
+                {% comment %} <td>Password}}</td>  {% endcomment %}
+            </tr>
+{% endif %}
+        </table>
+    </form>
+</body>
+</html>
