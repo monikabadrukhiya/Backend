@@ -2,8 +2,8 @@ from django.shortcuts import render,redirect,HttpResponse
 from sessionapp.models import Login
 
 def Home(Request):
-    data=Login.objects.all()
-    return render(Request,"signup.html",{'data':data})
+    Login.objects.all()
+    return render(Request,"signup.html")
 
 def Adddata(request):
     if request.GET.get('submit')=="Submit":
@@ -31,17 +31,17 @@ def Logindata(request):
     if request.GET.get('submit')=="Submit":
         luser=request.GET.get('Username')
         lpwd=request.GET.get('pswd')
-        print("luser======",luser)
-        print("luser======",lpwd)
+        # print("luser======",luser)
+        # print("luser======",lpwd)
 
-    user=Login.objects.filter(Username=luser,Password=lpwd).first()
-    print("user//////////",user)
-    if user:
-        data=Login.objects.all()
-        userdata=Login.objects.filter(Username=luser,Password=lpwd).first()
-        return render(request,"logout.html",{'userdata':userdata})
-    else:
-        return render(request,"login.html")
+        user=Login.objects.filter(Username=luser,Password=lpwd).first()
+        # print("user//////////",user)
+        if user:
+            data=Login.objects.all()
+            user=Login.objects.filter(Username=luser,Password=lpwd).first()
+            return render(request,"logout.html",{'userdata':user})
+        else:
+            return render(request,"login.html")
 
     
 
