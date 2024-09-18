@@ -1,0 +1,29 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">{% load static %} 
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+      <head>
+        <meta charset="utf-8">
+        <title>Transparent Login Form UI</title>
+        <link rel="stylesheet" href="{% static "style.css" %}">
+      </head>
+      <body>
+        <div class="bg-img">
+          <div class="content">
+            <header>Login Form</header>
+            {% if data %}
+            <p style="font-size:30px; color: white;">User id:{{data}}</p>  
+            {% endif %}
+            <form action="">
+              <div class="field space">
+                <button class="btn btn-success" style="font-size:larger;width: 100%;"><a href="delete">Logout</a></button> 
+              </div>
+            </form>
+        
+          </div>
+        </div>
+      </body>
+    </html>

@@ -1,5 +1,5 @@
 """
-URL configuration for sessionadmin project.
+URL configuration for sessiomform project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -20,10 +20,10 @@ from . import views
 
 urlpatterns = [
     path('',views.Home),
-    path('add',views.Adddata,name="Adddata"),
-    path('signup',views.signdata),
-    path('logindata',views.Logindata,name="Logindata"),
-    path('delete',views.deleteid),
+    path('signdata',views.Signupdata),
+    path('signup',views.signup),
+    path('logindata',views.Logindata),
     path('check',views.Checking),
+    path('delete',views.Deleteid),
     path('admin/', admin.site.urls),
 ]
