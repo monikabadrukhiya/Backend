@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session Form</title>
+  <link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+  <div class="wrapper">
+      <h2>Logout</h2>
+      {% if data %}
+        <p style="font-size: 30px; color: white;">User Id:-{{data}}</p>
+      {% endif %}
+      <button type="submit"><a href="delete">Logout</a></button>
+  </div>
+</body>
+</html>

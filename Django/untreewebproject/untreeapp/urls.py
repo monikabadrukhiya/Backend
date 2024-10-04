@@ -36,7 +36,10 @@ urlpatterns = [
     path('services',views.Service,name='Service'),
     path('shop',views.Shop,name='Shop'),
     path('thankyou',views.Thankyou,name='Thankyou'),
-    path('admin/', admin.site.urls),
+    path('signup',views.Signupdata),
+    path('logindata',views.Logindata),
+    path('deletedata',views.Deletelogindata),
+    path('admin/', views.),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+    
+          <li class="nav-item">
+            <a class="nav-link " href="/home">
+              <i class="bi bi-grid"></i>
+              <span>Dashboard</span>
+            </a>
+          </li><!-- End Dashboard Nav -->
+    
+                <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-journal-text"></i><span>Inquiry</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+                <a href="addformdata">
+                  <i class="bi bi-circle"></i><span>Add Inquiry</span>
+                </a>
+              </li>
+              <li>
+                <a href="viewdata">
+                  <i class="bi bi-circle"></i><span>View Inquiry</span>
+                </a>
+              </li>
+            </ul>
+          </li><!-- End Forms Nav --> 
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="totaladmission">
+              <i class="bi bi-card-list"></i>
+              <span>Total Admission</span>
+            </a>
+          </li>
+          <li class="nav-heading">Pages</li>
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="ragister">
+              <i class="bi bi-card-list"></i>
+              <span>Register</span>
+            </a>
+          </li><!-- End Register Page Nav -->
+    
+          <li class="nav-item">
+            <a class="nav-link collapsed" href="/">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span>Login</span>
+            </a>
+          </li><!-- End Login Page Nav -->
+        </ul>
+    
+      </aside><!-- End Sidebar-->
+</body>
+</html>

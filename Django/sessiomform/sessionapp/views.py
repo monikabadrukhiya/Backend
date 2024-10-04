@@ -24,10 +24,11 @@ def Signupdata(request):
         else:
             msg="Password do not match"
             return render(request,"signup.html",msg)
-        
-@cache_control(no_cache=True, must_revalidate=True, no_store=True)
-def signup(request):
     return render(request,"signup.html")
+        
+# @cache_control(no_cache=True, must_revalidate=True, no_store=True)
+# def signup(request):
+#     return render(request,"signup.html")
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def Logindata(request):

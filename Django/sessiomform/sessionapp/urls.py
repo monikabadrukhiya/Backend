@@ -21,7 +21,7 @@ from . import views
 urlpatterns = [
     path('',views.Home),
     path('signdata',views.Signupdata),
-    path('signup',views.signup),
+    # path('signup',views.signup),
     path('logindata',views.Logindata),
     path('check',views.Checking),
     path('delete',views.Deleteid),

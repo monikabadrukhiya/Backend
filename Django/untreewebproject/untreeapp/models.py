@@ -56,7 +56,11 @@ class Checkout(models.Model):
     Password=models.CharField(max_length=20)
 
 
-
+class Login(models.Model):
+    Username=models.CharField(max_length=50)
+    Email=models.CharField(max_length=50)
+    Password=models.CharField(max_length=50)
+    Number=models.IntegerField(max_length=15)
 
 
 

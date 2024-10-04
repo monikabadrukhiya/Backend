@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/favicon.png'%}" rel="icon">
+  <link href="{% static 'img/apple-touch-icon.png'%}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/quill/quill.snow.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/quill/quill.bubble.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/remixicon/remixicon.css'%}" rel="stylesheet">
+  <link href="{% static 'vendor/simple-datatables/style.css'%}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!--  ======= Header ======= -->
+    {% include "header.html" %}
+ <!-- End Header --> 
+  
+  <!-- ======= Sidebar ======= -->
+   {% include "sidebar.html" %}
+ <!-- End Sidebar--> 
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>View Data</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/home">Home</a></li>
+          <li class="breadcrumb-item">View Tables</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">View Datatables</h5>
+              {% comment %} <p>Add lightweight datatables to your project with using the <a
+                  href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library.
+                Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a
+                  href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p>
+              {% endcomment %}
+
+              <!-- Table with stripped rows -->
+              <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
+                <form action="viewdata" method="get">
+                  <div class="datatable-top">
+                  <div class="datatable-dropdown">
+                    <label>
+                      <select class="datatable-selector" name="per-page">
+                        <option value="5">5</option>
+                        <option value="10" selected="">10</option>
+                        <option value="15">15</option>
+                        <option value="-1">All</option>
+                      </select> entries per page
+                    </label>
+                  </div>
+                  <div class="datatable-search">
+                    <input class="datatable-input" placeholder="Search..." type="search" name="search" value="{{name}}" 
+                    title="Search within table" oninput="this.form.submit()">
+                  </div>
+                </div>
+                </form>
+              </div>
+              <div class="datatable-container">
+                <table class="table ">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>
+                        <b>N</b>ame
+                      </th>
+                      <th>Number</th>
+                      <th>Parent Number</th>
+                      <th>Study</th>
+                      <th>Reference</th>
+                      <th>Inquiry</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Edit</th>
+                      <th><button><a href="addmission">Admission</a></button></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for i in viewsdata %}
+                    <tr>
+                      <td>{{i.id}}</td>
+                      <td>{{i.Name}}</td>
+                      <td>{{i.Number}}</td>
+                      <td>{{i.Pnumber}}</td>
+                      <td>{{i.Study}}</td>
+                      <td>{{i.Reference}}</td>
+                      <td>{{i.Inquiry}}</td>
+                      <td>{{i.Date}}</td>
+                      <td>{{i.Status}}</td>
+                      <td><a href="edit?editid={{i.id}}">Edit</a></td>
+
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- End Table with stripped rows -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+   <!-- ======= Footer ======= -->
+   {% include "footer.html" %}
+   <!-- End Footer  -->
+ 
+   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ 
+   <!-- Vendor JS Files -->
+   <script src="{% static 'vendor/apexcharts/apexcharts.min.js'%}"></script>
+   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+   <script src="{% static 'vendor/chart.js/chart.umd.js'%}"></script>
+   <script src="{% static 'vendor/echarts/echarts.min.js'%}"></script>
+   <script src="{% static 'vendor/quill/quill.js'%}"></script>
+   <script src="{% static 'vendor/simple-datatables/simple-datatables.js'%}"></script>
+   <script src="{% static 'vendor/tinymce/tinymce.min.js'%}"></script>
+   <script src="{% static 'vendor/php-email-form/validate.js'%}"></script>
+ 
+   <!-- Template Main JS File -->
+   <script src="{% static 'js/main.js' %}"></script>
+ 
+</body>
+
+</html>
