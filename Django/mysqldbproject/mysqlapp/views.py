@@ -22,5 +22,3 @@ def Signupdata(request):
         if fname and lname and email and password and number:
             Databaseentry.objects.create(Firstname=fname,Lastname=lname,Email=email,Password=password,Number=number)
             return redirect("/")
-
-# def Delete(request):

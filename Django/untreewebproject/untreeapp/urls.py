@@ -39,9 +39,8 @@ urlpatterns = [
     path('signup',views.Signupdata),
     path('logindata',views.Logindata),
     path('deletedata',views.Deletelogindata),
-    path('admin/', views.),
 ]
 
+
 if settings.DEBUG:
-   if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

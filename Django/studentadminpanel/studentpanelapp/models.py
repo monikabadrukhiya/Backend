@@ -27,4 +27,5 @@ class Inquiry(models.Model):
     Reference=models.CharField(max_length=50)
     Inquiry=models.CharField(max_length=50)
     Status=models.CharField(max_length=20)
-    Date=models.DateTimeField(auto_now_add=True)
+    expectedDate=models.DateTimeField()
+    visitedDate=models.DateTimeField()  

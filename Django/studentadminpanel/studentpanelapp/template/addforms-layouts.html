@@ -96,9 +96,14 @@
                 <input type="text" class="form-control"  name="reference" value="{% if alledit %}{{alledit.Reference}}{% endif %}">
               </div>
               <div class="col-12">
-                <label for="inputAddress" class="form-label">Inquiry Date</label>
-                <input type="date" class="form-control"  name="date" value="{% if alledit %}{{alledit.Date}}{% endif %}">
+                <label for="inputAddress" class="form-label">Visited Date</label>
+                <input type="date" class="form-control"  name="visiteddate" value="{% if alledit %}{{alledit.Date}}{% endif %}">
               </div>
+              <div class="col-12">
+                <label for="inputAddress" class="form-label">Expected Date</label>
+                <input type="date" class="form-control"  name="expectedate" value="{% if alledit %}{{alledit.Date}}{% endif %}">
+              </div>
+             
               <div class="col-12">
                 <label for="inputAddress" class="form-label">Inquiry</label>
                 <input type="text" class="form-control"  name="inquiry" value="{% if alledit %}{{alledit.Inquiry}}{% endif %}">

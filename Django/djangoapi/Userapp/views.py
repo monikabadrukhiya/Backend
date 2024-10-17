@@ -19,6 +19,7 @@ def Creatuser(request):
     if(serializer.is_valid()):
         serializer.save()
         return Response({"data":serializer.data})
+    print(serializer.errors)
     return Response({"data":[],"error":"Please Enter Valid Field"})
 
 @api_view(['GET'])                            # Data  Add 

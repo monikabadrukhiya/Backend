@@ -21,6 +21,8 @@ from.import views
 urlpatterns = [
     path('',views.Login),
     path('home',views.Home),
+    path('todaycall',views.Todaycall),
+    path('countinquirydata',views.Countinquiry),
     path('addformdata',views.addform),
     path('viewdata',views.Viewform),
     path('addmission',views.Addmissionform),

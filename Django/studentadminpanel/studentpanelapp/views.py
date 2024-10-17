@@ -3,6 +3,7 @@ from studentpanelapp .models import Signdata,Admission,Inquiry
 from django.views.decorators.cache import cache_control
 import datetime as dt
 
+d=dt.datetime.now()
 
 
 # @cache_control(no_cache=True, must_revalidate=True, no_store=True)
@@ -11,12 +12,40 @@ def Login(request):
 
 # @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def Home(request):
-    d=dt.datetime.now()
     Today=d.date()
     print("Today========",Today)
-    inquirydata=Inquiry.objects.filter(Date=Today).count()
-    print("datteee====",inquirydata)
-    return render(request,"index.html")
+    todaycalls=Inquiry.objects.filter(expectedDate=Today).count()
+    print("todaycalls====",todaycalls)
+    inquirycount=Inquiry.objects.filter(visitedDate=Today).count()
+
+    # data=Inquiry.objects.all()
+    # splitdate=data.e
+    # def Duecall(n):
+    #     if n:
+            
+    #         return n
+    # get=filter(Duecall,data)
+    # for i in get:
+    #     print(i)
+
+
+    yr=d.strftime("%Y")
+    month=d.strftime("%m")
+    day=d.strftime("%d")
+    return render(request,"index.html",{'todaycalls':todaycalls,'inquirycount':inquirycount })
+
+def Todaycall(request):
+     Today=d.date()
+     print("Today========",Today)
+     showtodaycalldata=Inquiry.objects.filter(expectedDate=Today)
+     return render(request,"showtodaycall.html",{'showtodaycalldata':showtodaycalldata})
+
+
+def Countinquiry(request):
+     Today=d.date()
+     print("Today========",Today)
+     countinquirydata=Inquiry.objects.filter(visitedDate=Today)
+     return render(request,"showcountinquiry.html",{'countinquirydata':countinquirydata})
 
 # @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def addform(request):
@@ -116,7 +145,8 @@ def Inquirydata(request):
         study=request.GET.get('study')       
         ref=request.GET.get('reference')    
         inquiry=request.GET.get('inquiry') 
-        date=request.GET.get('date')
+        expectedate=request.GET.get('expectedate')
+        visiteddate=request.GET.get('visiteddate')
         status=request.GET.get('status')
         print("id=====",id)
         print("name======",name)
@@ -124,19 +154,20 @@ def Inquirydata(request):
         print("name======",pnum)
         print("name======",study)
         print("name======",ref)
-        print("date========",date)
+        print("date========",expectedate)
         print("name======",inquiry)
+        d=dt.datetime.now()
+        Today=d.date()
+        print("Today========",Today)
 
         if (id):
-            Inquiry.objects.filter(id=id).update(Name=name,Number=num,Pnumber=pnum,Study=study,Reference=ref,Inquiry=inquiry,Date=date,Status=status)
+            Inquiry.objects.filter(id=id).update(Name=name,Number=num,Pnumber=pnum,Study=study,Reference=ref,Inquiry=inquiry,expectedDate=expectedate,visitedDate=visiteddate,Status=status)
             return redirect("/viewdata")
         else:
-            Inquiry.objects.create(Name=name,Number=num,Pnumber=pnum,Study=study,Reference=ref,Inquiry=inquiry,Date=date,Status=status)
-            inquirydata=Inquiry.objects.filter(Date=date).first()
-            print("datteee====",inquirydata)
+            Inquiry.objects.create(Name=name,Number=num,Pnumber=pnum,Study=study,Reference=ref,Inquiry=inquiry,expectedDate=expectedate,visitedDate=visiteddate,Status=status)
             return redirect("/home")
+                    
 def Editdata(request):
-
     editid=request.GET.get('editid')
     print("editid======",editid)
     editdata=Inquiry.objects.filter(id=editid).first()
