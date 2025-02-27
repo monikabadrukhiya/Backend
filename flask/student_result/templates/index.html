@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+    <h1>Enter Your data</h1>
+    <form action="/" method="post">
+        <table border="1px">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" value=""></td>
+            </tr>
+            <tr>
+                <td>Contact</td>
+                <td><input type="number" name="num" value=""></td>
+            </tr>
+            <tr>
+                <td>Standard</td>
+                <td><input type="text" name="std" value=""></td>
+            </tr>
+            <tr>
+                <td>Science</td>
+                <td><input type="text" name="sci" value=""></td>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td><input type="text" name="phy" value=""></td>
+            </tr>
+            <tr>
+                <td>maths</td>
+                <td><input type="text" name="maths" value=""></td>
+            </tr>
+            <tr>
+                <td>English</td>
+                <td><input type="text" name="eng" value=""></td>
+            </tr>
+            <tr>
+                <td><input type="submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="container">
+    <h1>Student Result</h1>
+    {% if std_result|length == 0 %}
+    Not Found Data
+    {% else %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">sr_no</th>
+                <th scope="col">name</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Standard</th>
+                <th scope="col">Physics</th>
+                <th scope="col">Science</th>
+                <th scope="col">maths</th>
+                <th scope="col">English</th>
+                <th scope="col">total</th>
+                <th scope="col">Persentage</th>
+                <th scope="col">Grade</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for data in std_result %}
+
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{data.name}}</td>
+                <td>{{data.num}}</td>
+                <td>{{data.std}}</td>
+                <td>{{data.phy}}</td>
+                <td>{{data.sci}}</td>
+                <td>{{data.maths}}</td>
+                <td>{{data.eng}}</td>
+                <td>{{data.total}}</td>
+                <td>{{data.per}}</td>
+                <td>{{data.grade}}</td>
+                <td><a href="/update/{{data.sno}}">Update</a></button></td>
+                <td><a href="/delete/{{data.sno}}">Delete</a></button></td>
+
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock body %}

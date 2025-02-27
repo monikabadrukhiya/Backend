@@ -1,0 +1,62 @@
+{% extends "header.html" %}
+
+    {% block data %}
+    <!-- {% block title %}Home{% endblock title %} -->
+    <div class="container">
+        <form action="/" method="post">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="Contact" class="form-label">Contact</label>
+                <input type="number" class="form-control" name="num" id="">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="pwd">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <h1>Your Data</h1>
+        {% if alldata|length == 0 %}
+        Not Found Data
+        {% else %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">sr_no</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Email address</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Update</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in alldata %}
+
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{data.name}}</td>
+                    <td>{{data.num}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.pwd}}</td>
+                    <td><a href="/update/{{data.sno}}">Update</a></button></td>
+                    <td><a href="/delete/{{data.sno}}">Delete</a></button></td>
+
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+  
+    {% endblock data %}

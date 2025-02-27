@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajex</title>
+
+    <script>
+        function loadTopics() {
+            let language = document.getElementById("language_id").value;
+
+            fetch(`/getform/?language=${language}`)
+                .then(response => response.json())
+                .then(data => {
+                    let topicsDropdown = document.getElementById("topic_id");
+                    topicsDropdown.innerHTML = '';  // Clear previous options
+
+                    // Add a default option
+                    let defaultOption = document.createElement('option');
+                    defaultOption.text = "Select Courses";
+                    defaultOption.value = "";
+                    topicsDropdown.add(defaultOption);
+
+                    // Add fetched topics to the dropdown
+                    if (data.topics) {
+                        data.topics.forEach(topic => {
+                            let option = document.createElement('option');
+                            option.text = topic.topic;
+                            option.value = topic.topic;
+                            topicsDropdown.add(option);
+                        });
+                    } else {
+                        let errorOption = document.createElement('option');
+                        errorOption.text = "No topics available";
+                        errorOption.value = "";
+                        topicsDropdown.add(errorOption);
+                    }
+                })
+                .catch(error => {
+                    console.log("Error fetching topics:", error);
+                });
+        }
+    </script></head>
+<body>
+    <form action="" id="myform">
+        <!-- for Language Dropdown -->
+        <h1>select course based on Language </h1>
+        <select name="Language" id="language_id" onchange="loadTopics()" >
+            <option value="Select Language">Select Language</option>
+            {% for i in language %}
+            <option value="{{i.language}}">{{i.language}}</option>
+            {% endfor %}
+        </select>
+
+        <!-- for Topic Dropdown -->
+        <select name="Topic" id="topic_id">
+            <option value="">Topic</option>
+        </select>
+    </form>
+</body>
+</html>

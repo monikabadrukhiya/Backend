@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head> 
+<body>
+  
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+        <img src="{% static "img/logo-regular-light.jpg" %}" alt="">
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url "index" %}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Category
+                    </a>
+                    <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+                        {% for i in category_data %}
+                        <li><a class="dropdown-item " href="/category?categoryid={{i.id}}">{{i.category_name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "shop" %} ">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "about" %} ">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "contact" %}">Contact</a>
+                </li>
+            </ul>
+            <ul class="left-btn d-flex flex-row justify-content-end mt-3">
+                {% comment %} <li><a href="" class="btn-square  me-2 p-0 "><i class="fa fa-search"
+                            style="font-size: 22px;"></i></a>
+                </li> {% endcomment %}
+                <li><a href="" class="btn-square  me-2 p-0 "><i class="fa fa-heart"
+                            style="font-size: 22px;"></i></a></li>
+                {% if request.session.member %}
+                <li><a href="{% url "logout" %}" class="btn-square  me-2 p-0 "><i class="fa fa-sign-out"
+                            aria-hidden="true" style="font-size: 22px;"></i></a></li>
+                {% else %}
+                <li><a href="{% url "logindataapp" %}" class="btn-square text-red me-2 p-0 "><i class="fa fa-user"
+                            style="font-size: 22px;"></i></a></li>
+                {% endif %}
+                <li><a href="{% url "cartdata" %}" class="btn-square  me-2 "><i class="fa fa-shopping-cart"
+                            style="font-size: 22px;"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% block content %}
+    <!-- Default content can go here, or be left empty -->
+{% endblock content %} 
+    <link rel="stylesheet" href="{% static 'js/bootstrap.bundle.js' %}">
+</body>
+
+</html> 

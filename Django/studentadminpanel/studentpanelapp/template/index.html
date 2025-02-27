@@ -128,9 +128,11 @@
                   <div class="d-flex align-items-center">
                   
                     <div class="ps-3">
-                      <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
-
+                      {% if totalduecall %}
+                      <a href="duecall"> <h6>{{totalduecall}}</h6></a>
+                       {% else %}
+                       <h6>{{0}}</h6>
+                       {% endif %} 
                     </div>
                   </div>
                 </div>
@@ -206,7 +208,7 @@
   <script src="{% static "vendor/php-email-form/validate.js"%}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{% static "js/main.js" %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
 
 </body>
 

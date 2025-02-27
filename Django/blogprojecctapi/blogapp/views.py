@@ -2,11 +2,19 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from blogapp.models import Blog,Comment
 from blogapp.blogserializer import Blogserializer,Commentserializer
+from django.db.models import Q
+
+
 
 
 @api_view(['GET'])
 def Blogget(request):
     data=Blog.objects.all()
+
+    search_query=request.GET.get('search','')
+    if search_query:
+        data=data.filter(Q(blogtitle__icontains=search_query)| Q(description__icontains=search_query)) 
+  
     Blogdata=Blogserializer(data,many=True)
     return Response({"data":Blogdata.data})
 
@@ -86,7 +94,7 @@ def Commentfilter(request,filterid):
 @api_view(['GET'])
 def Commentblogfilter(request,commentblogfilter):
     print(commentblogfilter)
-    filterdata=Comment.objects.filter(userid=commentblogfilter)
+    filterdata=Comment.objects.filter(blogid=commentblogfilter)
 
     serializer=Commentserializer(filterdata,many=True)
     return Response({'data':serializer.data})

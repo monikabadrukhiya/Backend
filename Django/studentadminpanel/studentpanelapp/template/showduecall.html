@@ -76,7 +76,7 @@
 
               <!-- Table with stripped rows -->
               <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
-                <form action="todaycall" method="get">
+                <form action="duecall" method="get">
                   <div class="datatable-top">
                   <div class="datatable-dropdown">
                     <label>
@@ -114,7 +114,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                    {% for i in showtodaycalldata %}
+                    {% for i in dueinquirydata %}
                     <tr>
                       <td>{{i.id}}</td>
                       <td>{{i.Name}}</td>

@@ -23,6 +23,7 @@ urlpatterns = [
     path('home',views.Home),
     path('todaycall',views.Todaycall),
     path('countinquirydata',views.Countinquiry),
+    path('duecall',views.Duecalls),
     path('addformdata',views.addform),
     path('viewdata',views.Viewform),
     path('addmission',views.Addmissionform),

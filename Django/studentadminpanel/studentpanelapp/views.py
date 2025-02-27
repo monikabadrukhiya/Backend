@@ -1,10 +1,10 @@
 from django.shortcuts import render,redirect,HttpResponse
 from studentpanelapp .models import Signdata,Admission,Inquiry
 from django.views.decorators.cache import cache_control
-import datetime as dt
+from datetime import date
 
-d=dt.datetime.now()
-
+today = date.today()  # Today's date (without time)
+print("Today========", today)
 
 # @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def Login(request):
@@ -12,40 +12,49 @@ def Login(request):
 
 # @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def Home(request):
-    Today=d.date()
-    print("Today========",Today)
-    todaycalls=Inquiry.objects.filter(expectedDate=Today).count()
-    print("todaycalls====",todaycalls)
-    inquirycount=Inquiry.objects.filter(visitedDate=Today).count()
+    # Query for inquiries with expected and visited dates matching today
+    today_calls = Inquiry.objects.filter(expectedDate__date=today).count()
+    inquiry_count = Inquiry.objects.filter(visitedDate__date=today).count()
 
-    # data=Inquiry.objects.all()
-    # splitdate=data.e
-    # def Duecall(n):
-    #     if n:
-            
-    #         return n
-    # get=filter(Duecall,data)
-    # for i in get:
-    #     print(i)
+    print("Today calls====", today_calls)
+    print("Inquiry count====", inquiry_count)
+
+    # Initialize overdue calls counter
+    total_due_call = 0
+
+    # Iterate through inquiries to count overdue tasks
+    inquiries = Inquiry.objects.all()
+    for inquiry in inquiries:
+        expected_date = inquiry.expectedDate.date()  # Convert datetime to date
+        print("Expected Date========", expected_date)
+
+        # Check if the expected date is overdue
+        if expected_date <today:
+            total_due_call += 1
+
+    # Render the data to the template
+    return render(request, "index.html",  { 'todaycalls': today_calls,'inquirycount': inquiry_count,'totalduecall': total_due_call }
+    )
 
 
-    yr=d.strftime("%Y")
-    month=d.strftime("%m")
-    day=d.strftime("%d")
-    return render(request,"index.html",{'todaycalls':todaycalls,'inquirycount':inquirycount })
 
 def Todaycall(request):
-     Today=d.date()
-     print("Today========",Today)
-     showtodaycalldata=Inquiry.objects.filter(expectedDate=Today)
+     print("Today========",today)
+     showtodaycalldata=Inquiry.objects.filter(expectedDate=today)
      return render(request,"showtodaycall.html",{'showtodaycalldata':showtodaycalldata})
 
 
 def Countinquiry(request):
-     Today=d.date()
-     print("Today========",Today)
-     countinquirydata=Inquiry.objects.filter(visitedDate=Today)
+     print("Today========",today)
+     countinquirydata=Inquiry.objects.filter(visitedDate=today)
      return render(request,"showcountinquiry.html",{'countinquirydata':countinquirydata})
+
+def Duecalls(request):
+    inquiries = Inquiry.objects.all()
+    for inquiry in inquiries:
+        expected_date = inquiry.expectedDate.date()  # Convert datetime to date
+    dueinquirydata=Inquiry.objects.filter(expectedDate__lt=today)
+    return render(request,"showduecall.html",{'dueinquirydata':dueinquirydata})
 
 # @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def addform(request):
@@ -156,10 +165,7 @@ def Inquirydata(request):
         print("name======",ref)
         print("date========",expectedate)
         print("name======",inquiry)
-        d=dt.datetime.now()
-        Today=d.date()
-        print("Today========",Today)
-
+       
         if (id):
             Inquiry.objects.filter(id=id).update(Name=name,Number=num,Pnumber=pnum,Study=study,Reference=ref,Inquiry=inquiry,expectedDate=expectedate,visitedDate=visiteddate,Status=status)
             return redirect("/viewdata")

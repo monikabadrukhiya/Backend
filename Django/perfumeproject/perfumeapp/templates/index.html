@@ -1,0 +1,223 @@
+<body>
+
+        <!-- start navbar -->
+        {% include "header.html" %}
+        <!-- end navbar -->
+        <!-- start section  -->
+        <!-- {% block content %}
+        <h1>hello</h1>
+         <Default content can go here, or be left empty 
+        {% endblock content %} -->
+    
+    <section>
+            <!-- main contents -->
+            <div class="container-fluid">
+              
+                <div class="main-img mt-2">
+                    <div class="back-mainimg">
+                        <div class="box-contentleft">
+                            <div class="title p-0 m-0">
+                                
+                                <h1>sweet fragrance</h1>
+                            </div>
+                            <div class="sub-title p-0 m-0">
+                                <p>Order online and have your products delivered
+                                    <br>
+                                    to your closest store for free
+                                </p>
+                            </div>
+                             <div class="box-button">
+                                <a href=""
+                                    class="button-main1 btn-outline-light button-shop-template--21124749263122__9feb9cc5-57ee-4d0e-b913-a760347839b0-template--20852586905894__9feb9cc5-57ee-4d0e-b913-a760347839b0-slideshow-1">
+                                    Shop now
+                                </a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end main content  -->
+            <!-- start banner item -->
+            <div class="container-fluid mt-5">
+                <div class="row d-flex ">
+                    <div class="banner d-block d-flex flex-row">
+                        <div class="banner1 col-4">
+                            <img class=" " src="../static/img/womens perfume img.jpg" alt="">
+                            <div
+                                class="content-overlay position-absolute text-white d-flex flex-column justify-content-center align-items-center">
+                                <h3 class="title-banner">Women's Perfume</h3>
+                                <p class="sub-title" style="color: white;">Shine confidently everywhere</p>
+                                <a href="{% url "shop" %}" class="btn btn-outline-light mt-2">Shop Now</a>
+                            </div>
+                        </div>
+                        <div class="banner2">
+                            <div class="col-4">
+                                <img class="  lazyloaded" src="../static/img/mens pefume img.jpg" alt="">
+                                <div
+                                    class="content-overlay position-absolute text-white d-flex flex-column justify-content-center align-items-center">
+                                    <h3 class="title-banner">Men's Perfume</h3>
+                                    <p class="sub-title" style="color: white;">Shine confidently everywhere</p>
+                                    <a href="{% url "shop" %}" class="btn btn-outline-light mt-2">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner3">
+                            <div class="col-4 ">
+                                <img class="  lazyloaded" src="../static/img/exclusive perfume img.jpg" alt="">
+                                <div
+                                    class="content-overlay position-absolute text-white d-flex flex-column justify-content-center align-items-center">
+                                    <h3 class="title-banner">Exclusive Perfume</h3>
+                                    <p class="sub-title" style="color: white;">Shine confidently everywhere</p>
+                                    <a href="{% url "shop" %}" class="btn btn-outline-light mt-2">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end banner item -->
+            <!-- start selling item -->
+            <div class="container-fluid mt-5">
+                <div class="selling-content d-flex flex-column">
+                    <div class=" sub-title sell-subtitle d-flex mt-4 p-2 justify-content-center align-items-center">
+                        <p>Check out our</p>
+                    </div>
+                    <div class=" title sell-title d-flex mt-3 justify-content-center align-items-center">
+                        <h1>Best Sellers</h1>
+                    </div>
+                    <div class="sell-content d-flex mt-3 flex-wrap ">
+                {% for i in product_data %}
+                        <div class="sel-item">
+                            <div class="element w-100">
+                                <a href="/discription?productid={{i.id}} "> <img class="" src="{{i.product_image.url}}" alt=""></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <!-- <p>{{i.product_image.url}}</p> -->
+                            <p>{{i.category_id.category_name}}</p>
+                            <h5 class="">{{i.product_name}}</h5>
+                            <strong>${{i.product_price}}</strong>
+                            </div>
+                        </div>
+                {% endfor %}      
+                
+                        {% comment %} <div class="sel-item d-flex flex-wrap">
+                            <div class="element w-100">
+                                <a href=""><img class="" src="../static/img/women-perfume1.jpg" alt=""></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <p>Women</p>
+                                <h5>Bright Light by Yana</h5>
+                                <strong>$21.00</strong>
+                            </div>
+                        </div>
+                        <div class="sel-item">
+                            <div class="element w-100">
+                                <a href=""><img class="" src="../static/img/men-perfume1.jpg" alt=""></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <p>Men</p>
+                                <h5>Bright Light by Yana</h5>
+                                <strong>$25.00</strong>
+                            </div>
+                        </div>
+                        <div class="sel-item">
+                            <div class="element w-100">
+                                <a href=""><img class="" src="../static/img/exclusive-perfume3.png" alt=""></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <p>Exclusive</p>
+                                <h5>Delightful by Seneta</h5>
+                                <strong>$199.00</strong>
+                            </div>
+                        </div>
+                        <div class="sel-item">
+                            <div class="element w-100">
+                                <a href=""><img class="" src="../static/img/women-perfume3.jpg" alt=""></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <p>Women</p>
+                                <h5>Nina Ricci</h5>
+                                <strong>$21.00</strong>
+                            </div>
+                        </div>
+                        <div class="sel-item">
+                            <div class="element w-100">
+                                <a href=""><img class="" src="../static/img/men-perfume2.jpg" alt=""></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <p class="element-subtitle">Men</p>
+                                <h5 class="element-title">  </h5>
+                                <strong>$20.00</strong>
+                            </div>
+                        </div>
+                        <div class="sel-item">
+                            <div class="element w-100">
+                                <a href=""> <img class="" src="../static/img/exclusive-perfume6.png" alt=""
+                                        style="height: 290PX;"></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <p>Exclusive</p>
+                                <h5>A Spritz of Opulence</h5>
+                                <strong>$160.00</strong>
+                            </div>
+                        </div>
+                        <div class="sel-item">
+                            <div class="element w-100">
+                                <a href=""><img class="" src="../static/img/women-perfume4.jpg" alt=""></a>
+                            </div>
+                            <div class="element-text w-100 mt-3">
+                                <p>Women</p>
+                                <h5>Evernia</h5>
+                                <strong>$22.00</strong>
+                            </div>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <!-- end selling item -->
+            <!-- start blog section -->
+            <div class="container-fluid mt-5">
+                <div class="blog-content d-flex">
+                    <div class="blog-contentleft d-flex flex-wrap">
+                        <div class="left-upper d-flex">
+                            <div class="row ">
+                                <div class="col-6">
+                                    <img style="height: 260px; margin-left: 50px;" src="../static/img/blog-img3.jpg" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <img src="../static/img/blog-img 1.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-down">
+                            <div class="w-100  flex-wrap">
+                                <div class="left-downtext">
+                                    <h4>the new fragrance that
+                                        <br> will surprise you every day
+                                    </h4>
+                                </div>
+                                <div class="box-button p-0 m-0">
+                                    <a href=""
+                                        class="button-main1 button-shop-template--21124749263122__9feb9cc5-57ee-4d0e-b913-a760347839b0-template--20852586905894__9feb9cc5-57ee-4d0e-b913-a760347839b0-slideshow-1">
+                                        Shop now
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-contentright d-flex ">
+                        <div>
+                            <img class="w-100" src="../static/img/blog-img4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end blog section -->
+        </section>
+        <!-- end section -->
+
+        <!-- start footer -->
+        {% include "footer.html" %}
+        <!-- end footer -->
+</body>
+</html>

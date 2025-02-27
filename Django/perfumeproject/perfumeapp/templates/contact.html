@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us file</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!-- start navbar -->
+    {% include "header.html" %}
+    {% comment %} <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+        <div class="container-fluid">
+            <img src="../static/img/logo-regular-light.jpg" alt="">
+
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="men.html">Mens</a></li>
+                            <li><a class="dropdown-item" href="women.html">Womens</a></li>
+                            <li><a class="dropdown-item" href="exclusive.html">Exclusive</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+                <ul class="left-btn d-flex flex-row justify-content-end mt-3">
+                  
+                    <li><a href="" class="btn-square  me-2 p-0 "><i class="fa fa-search" style="font-size: 22px;"></i></a>
+                    </li>
+                    <li><a href="" class="btn-square  me-2 p-0 "><i class="fa fa-heart" style="font-size: 22px;"></i></a></li>
+                    <li><a href="" class="btn-square text-red me-2 p-0 "><i class="fa fa-user" style="font-size: 22px;"></i></a></li>
+                    <li><a href="" class="btn-square  me-2 "><i class="fa fa-shopping-cart" style="font-size: 22px;"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> {% endcomment %}
+    <!-- end navbar -->
+    <!-- start section  -->
+    <section>
+        <!-- main contents -->
+        <div class="container-fluid">
+            <div class="main-img mt-2">
+                <div class="back-mainimg">
+                    <div class="box-contentleft">
+                        <div class="title p-0 m-0">
+    
+                            <h1 style="color:black; margin-top: 100px;">Contact Us</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end main content  -->
+        <!-- start contect -->
+         <div class="container-fluid mt-4">
+            <div class="row contect-box ">
+                <div class="col-6 ">
+                    <div class="footer-title mt-5 c-detail ">
+                        <h2 class="mb-4">Contact Detail</h2>
+                    </div>
+                    
+                    <div class="c-detail">
+                        <p
+                            class="has-ast-global-color-5-color has-text-color has-link-color wp-elements-0e207f80e442a329661df56298fe4c34">
+                            <strong>E:</strong> <a href="#">innesa@example.com</a><br><strong>P:</strong>
+                            9574445611<br><strong>A:</strong> 88 Shriji Park, Katargam<br> Surat, 395004
+                        </p>
+                    </div>
+                    <div class="footer-title mt-4  c-detail">
+                        <h3>Follow Us</h3>
+                    </div>
+                    <div class="w-100  footer-icon c-detail" style="margin-left: 270px;" >
+                        <ul class="d-flex">
+                            <li ><a href=""><i class="fa fa-facebook-official"></i></a></li>
+                            <li><a href=""><i class="fa fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-pinterest-square"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="contact-form-container">
+                        
+                        <form action="{% url 'contact' %}" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" value="Submit" name="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+         <!-- end contect -->
+    </section>
+    <!-- end section -->
+
+    <!-- start footer -->
+    {% include "footer.html" %}
+
+    <link rel="stylesheet" href="{% static 'js/bootstrap.bundle.js' %}">
+
+</body>
+
+</html>
